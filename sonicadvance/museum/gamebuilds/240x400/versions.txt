@@ -1,0 +1,4 @@
+Sonic Advance (1.4.7) (ver: high - touch) (gfx: high) (sound: mul) (sfx: no) (240x400) (Russian mod - landscape orientation - small circle pad - sound too low)
+Sonic Advance (1.4.0) (240x400) (NOT WORKING)
+Sonic Advance (2012) (1.4.5) (ver: med - touch) (gfx: high) (sound: mul) (sfx: no) (240x400) (landscape orientation)
+Sonic Advance (1.4.7) (ver: high - touch) (gfx: high) (sound: mul) (sfx: no) (240x400) (landscape orientation - small circle pad - sound too low)
