@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 60fps - Sonic Advance Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg3.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <div>
+          <img src="../btn/btn_a.gif" class="b-char"><a href="../main/updates.html" class="button">Updates</a>
+        </div>
+        <div>
+          <img src="../btn/btn_b.gif" class="b-char"><a href="../main/projects.html" class="button-active">Projects</a>
+        </div>
+        <div>
+          <img src="../btn/btn_c.gif" class="b-char"><a href="../main/hints.html" class="button">Tips & Hints</a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="../btn/btn_d.gif" class="b-char"><a href="../main/museum.html" class="button">Museum</a>
+        </div>
+        <div>
+          <img src="../btn/btn_e.gif" class="b-char"><a href="../main/support.html" class="button">Support</a>
+        </div>
+      </div>
+      <a href="../../index.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <a href="../main/projects.html" class="button">&#8617; BACK</a>
+      <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
+      <a href="#60fps" onclick="closeNav()" class="button">How to make the game run at 60fps?</a>
+      <a href="#goingon" onclick="closeNav()" class="button">What is going on?</a>
+      <a href="#solution" onclick="closeNav()" class="button">The solution in theory</a>
+    </nav>
+    <section onclick="closeNav()" class="color3">
+      <h1>Project 60fps</h1>
+      <br id="intro"><h2>Introduction</h2>
+      <article>
+        <p>
+          Hello and welcome to the Project 60fps page!
+        </p>
+        <p>
+          The goal of this project is to make the Android port of Sonic Advance run at 60fps.
+          However, while this sounds simple, this task is actually too demanding to make it possible.
+          Therefore, I made this page to explain how to make the game run smoothly and why it is complicated.
+        </p>
+        <p>
+          Also, if you have enough experience with Java programming and would like to give some help for this project, you can contact me via the <a href="../support/contact.html"><strong>Contact</strong></a> page.
+        </p>
+        <img class="center furrican" src="../img/furrican1.png">
+      </article>
+      <br id="60fps"><h2>How to make the game run at 60fps?</h2>
+      <article>
+        <p>Well... the answer is actually simple!</p>
+        <p>
+          In source code, all you have to do is put the FRAME_SKIP value to 0 in the <strong>getFrameTime()</strong> method of the <strong>MainState</strong> file located in the <strong>MFLib</strong> folder.
+        </p>
+        <img class="center" src="img/project0.PNG">
+        <p>Once this value is changed, recompile the APK, and voila! Problem solved, right?</p>
+        <p><strong>WRONG! As it turns out, doing so makes the game runs too fast! It runs 4 times faster than it supposed to be.</strong></p>
+      </article>
+      <br id="goingon"><h2>What is going on?</h2>
+      <article>
+        <p>Before talking about the solution, I would like to explain what is going on in the game.</p>
+        <p>
+          First of all, we all know that the Android port of Sonic Advance has a problematic frame rate.
+          The original version of the Android port initally runs at <strong>12.5fps</strong>.
+          But the Revival mod makes the game run at <strong>15fps</strong>.
+          While you might think that the game lags so much, <strong>the game is actually designed to run at 15fps!</strong></p>
+        <p>Here's the proof that the game is intended to run at this frame rate:</p>
+        <img class="center" src="img/options1.gif">
+        <p>As you can see, this is the Options menu running at 15fps.</p>
+        <p>
+          Now, what I'm gonna do is to change the value that determines the speed of the options banner.<br>
+          Located in the <strong>TitleState</strong> smali file is the <strong>optionOffsetX</strong> value set to 4.
+          This value determines the movement of the options banner per frame. When it's equal 4, that means the options banner moves 4 pixels to the left per frame.
+        </p>
+        <p>For this example, I will put the <strong>optionOffsetX</strong> value to 1.</p>
+        <img class="center" src="img/project1.PNG">
+        <p>
+          After decompilation, you can see that the options banner on top of the screen now moves 4 times slower.<br>
+          Or more accurately, it moves 1 pixel to the left per frame.
+        </p>
+        <img class="center" src="img/options2.gif">
+        <p>However, if I make the game run at 60fps, here is how the options banner behaves:</p>
+        <img class="center" src="img/options3.gif">
+        <p>As you can see now is that the options banner now moves at its intended speed, but in a smoother frame rate!<br>
+          The options banner still moves 1 pixel to the left per frame, but because now the game runs at 60fps, it looks like I made the options banner moves smoother!</p>
+      </article>
+      <br id="solution"><h2>The solution in theory</h2>
+      <article>
+        <p>
+          Alright. We have an example of how to fix an animation when giving the game a different frame rate.
+          Now, the question that is actually the right one to ask is this: <strong>How to make the game run at 60fps and at the right speed?</strong>
+        </p>
+        <p>
+          Well, here's my theory: Since the game is intentionally running at 15fps, <strong>we have to change all the values regarding speed, physics, gravity, time and animation frames by dividing or multiplying all those values by 4.</strong>
+          In this way, the game will run 4 times slower at 15fps, but it will run at normal speed at 60fps!
+        </p>
+        <p>
+          You might think that this is a good news, but the problem is that this is more complicated.
+          You see, Sonic Advance is a quite an ambitious game in terms of programming.
+          <strong>Tracking down every values regarding speed, physics, gravity, time and animation frames will take a lot of time, patience and understandings of the source code.</strong>
+          Not to mention a few glitches to take into consideration, such as the opening animation not working properly at one point.
+        </p>
+        <hr>
+        <p>
+          With all that said, <strong>I need help from experimented Java programmers to complete this project.</strong>
+          The frame rate is by far the most complained issue about the Android port of Sonic Advance.
+          If we can solve this issue, we can finally have the best and definitive version of Sonic Advance on Android!
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©SONICTEAM/SEGA CORPORATION, 2001, 2011, 2013. All rights reserved.<br>
+          SONIC ADVANCE, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
