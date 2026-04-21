@@ -1,0 +1,109 @@
+/* Main Tags */
+a{
+  text-decoration: none;
+  cursor: pointer;
+  width: 264px;
+  margin: 10px auto;
+}
+a, article, section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+article{
+  border-radius: 25px;
+  box-shadow: 0 0 0 4px black, 2px -10px 0 12px #C92820, 2px 2px 0 12px #C92820, -2px -12px 0 12px #EB752F, -2px 0 0 12px #EB752F, 0 0 0 20px black, 0 -10px 0 20px black;
+  background-color: #C9C9C9;
+  width: 280px;
+  height: 440px;
+  margin-top: 30px;
+  flex-direction: column;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+}
+div{
+  border-radius: 18px;
+  box-shadow: 0 0 0 4px black;
+  margin-bottom: 8px;
+  height: 355px;
+}
+h1{
+  border-radius: 25px;
+  box-shadow: 0 0 0 3px black;
+  background-color: #918C89;
+  padding: 0 20px;
+  font-size: 28px;
+}
+h1, h3{
+  color: white;
+  text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, -1px 1px #000, 1px 1px #000, 1px -1px #000, -1px -1px #000,
+  -2px 0 #000, 2px 0 #000, 0 -2px #000, 0 2px #000, -2px 2px #000, 2px 2px #000, 2px -2px #000, -2px -2px #000,
+  -2px 1px #000, 2px 1px #000, 1px -2px #000, 1px 2px #000, -2px -1px #000, 2px -1px #000, -1px -2px #000, -1px 2px #000,
+  3px 4px #000, 5px 4px #000, 4px 3px #000, 4px 5px #000, 3px 5px #000, 5px 3px #000, 5px 5px #000, 3px 3px #000;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+}
+section{
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Custom Classes */
+.bluegrad{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #0000AD, rgba(0, 0, 0, 0));
+}
+.button{
+  border-radius: 15px;
+  font-size: 20px;
+  height: 30px;
+  width: 220px;
+}
+.button, .updates{
+  color: #FF9900;
+  background-color: #606060;
+  border: 4px solid #0099FF;
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+  border-radius: 16px;
+  font-weight: bold;
+}
+.button:hover, .updates:hover{
+  color: #333;
+  background-color: #FF9900;
+}
+.updates{
+  border-radius: 20px;
+  font-size: 26px;
+  height: 40px;
+  width: 254px;
+}
+.webe{
+  background-image: url("../btn/sp_advhp_e.gif");
+  height: 100px;
+}
+.webf{
+  background-image: url("../btn/sp_advhp_f.gif");
+  height: 58px;
+  margin-top: 42px;
+}
+
+/* Media Query Class */
+@media (max-width: 425px){
+  .logo{
+    width: 80%;
+  }
+}
+
+/* Fonts */
+@font-face {
+  font-family: myFont;
+  src: url("../NokiaStandard\ Regular.otf");
+}
+.button, .updates{
+  font-family: myFont;
+}

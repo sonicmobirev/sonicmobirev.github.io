@@ -1,0 +1,316 @@
+/* Main Tags */
+a{
+  text-decoration: none;
+  color: yellow;
+  cursor: pointer;
+}
+a strong{
+  text-decoration: underline;
+}
+article{
+  padding: 1px 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+}
+body{
+  /* font-family: Arial, Helvetica, sans-serif; */
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+}
+footer, h1, h2, h3{
+  text-align: center;
+}
+footer div{
+  background-repeat: repeat-x;
+}
+footer hr{
+  max-width: 960px;
+}
+h1{
+  box-shadow: 0 0 0 2px white;
+  padding: 50px 0 10px 0;
+  margin-top: -40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: 900;
+  border-radius: 0 0 28px 28px;
+  box-sizing: border-box;
+}
+h1, h2, h3, header, header a span, header div, .burger1, .burger2, .center, .external, .external a, .wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1, h2, h3{
+  text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, -1px 1px #000, 1px 1px #000, 1px -1px #000, -1px -1px #000,
+  -2px 0 #000, 2px 0 #000, 0 -2px #000, 0 2px #000, -2px 2px #000, 2px 2px #000, 2px -2px #000, -2px -2px #000,
+  -2px 1px #000, 2px 1px #000, 1px -2px #000, 1px 2px #000, -2px -1px #000, 2px -1px #000, -1px -2px #000, -1px 2px #000,
+  3px 4px #000, 5px 4px #000, 4px 3px #000, 4px 5px #000, 3px 5px #000, 5px 3px #000, 5px 5px #000, 3px 3px #000;
+}
+h2{
+  min-height: 50px;
+  background-repeat: repeat-x;
+}
+header{
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  height: 100px;
+  width: 100%;
+  flex-direction: column;
+  margin: auto;
+-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+header, nav{
+-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+header a, nav a, .burger1, .burger2, .external a, .index a, .multimenus a, .question{
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, -1px 1px #000, 1px 1px #000, 1px -1px #000, -1px -1px #000,
+  1px 2px #000, 3px 2px #000, 2px 1px #000, 2px 3px #000, 1px 3px #000, 3px 1px #000, 3px 3px #000, 1px 1px #000;
+}
+header div{
+  display: none;
+}
+header div a, nav a, .burger1, .burger2, .index a{
+  margin: 10px;
+}
+header div a, nav a{
+  font-size: 18px;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+nav{
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+section{
+  margin: auto;
+  margin-top: 128px;
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 40px;
+  min-height: calc(100vh - 158px);
+}
+strong{
+  text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, -1px 1px #000, 1px 1px #000, 1px -1px #000, -1px -1px #000;
+}
+ul{
+  line-height: 1.7;
+  margin-left: -10px;
+}
+
+/* Custom Classes */
+.bg_amy{
+  background-image: url('../bg/amy.png'), url('../bg/bg14.png');
+}
+.bg_eggman{
+  background-image: url('../bg/eggman.png'), url('../bg/bg16.png');
+}
+.bg_knuckles{
+  background-image: url('../bg/knuckles.png'), url('../bg/bg13.png');
+}
+.bg_shadow{
+  background-image: url('../bg/shadow.png'), url('../bg/bg15.png');
+}
+.bg_sonic{
+  background-image: url('../bg/sonic.png'), url('../bg/bg11.png');
+}
+.bg_tails{
+  background-image: url('../bg/tails.png'), url('../bg/bg12.png');
+}
+.burger1, .burger2{
+  cursor: pointer;
+  left: 10px;
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  font-size: 32px;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.char{
+  background-position: bottom right;
+  background-repeat: no-repeat, repeat;
+  background-size: 50vh, auto;
+  background-attachment: fixed;
+}
+.external{
+  flex-direction: column;
+  width: 500px;
+  margin: 20px auto;
+  padding: 4px 0;
+}
+.external a{
+  min-height: 36px;
+  width: 500px;
+  max-width: 100%;
+  margin: 2px 0;
+}
+.external a:hover{
+  background-color: white;
+}
+.external a span{
+  min-width: 246px;
+  margin-left: 20px;
+}
+.external h3{
+  font-size: 17px;
+  font-style: normal;
+}
+.furrican{
+  margin-top: 20px;
+  margin-bottom: -1px;
+}
+.gamejolt{
+  width: 400px;
+  height: 250px;
+}
+.hints a{
+  border: 2px solid black;
+  box-shadow: -3px 3px 0 0 rgba(0, 0, 0, 0.5);
+  margin: 0 4px 10px 4px;
+  height: 60px;
+}
+.itchio{
+  width: 586px;
+  height: 167px;
+}
+.mobirev{
+  right: 10px;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+}
+.multimenus a{
+  height: 50px;
+  width: calc(100% - 38px);
+  background-color: rgba(255, 255, 255, 0.8);
+  background-image: url("../btn/button_on.gif");
+  background-repeat: no-repeat;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding-left: 50px;
+  margin: 20px 0;
+  font-size: 24px;
+}
+.multimenus a, .question{
+  display: flex;
+  align-items: center;
+}
+.multimenus a:hover{
+  background-image: url("../btn/button.gif");
+}
+.navbutton{
+  width: 230px;
+}
+.navbutton a{
+  width: 100%;
+}
+.question{
+  background-color: #10C6FF;
+  border: 2px solid black;
+  min-height: 50px;
+  border-radius: 28px;
+  padding: 0 12px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.question:hover{
+  color: yellow;
+}
+.question span{
+  margin-right: 10px;
+}
+.answer{
+  background-color: #105B74;
+  border: 2px solid black;
+  border-top-style: hidden;
+  border-radius: 0 0 28px 28px;
+  padding: 1px 12px;
+}
+.answer, .question{
+  width: calc(100% - 30px);
+}
+.title{
+  min-height: 40px;
+  border: solid 1px black;
+  margin: 4px 0 10px 0;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+
+/* Media Query Classes */
+@media (min-width: 1440px){
+  .anchor{
+    width: 230px;
+  }
+  .burger2{
+    display: none;
+  }
+  .mainmenu{
+    overflow-x: visible;
+    display: none;
+    transition: 0s;
+  }
+}
+
+@media (min-width: 768px){
+  header div{
+    display: flex;
+  }
+  .burger1{
+    display: none;
+  }
+}
+
+@media (max-width: 600px){
+  .itchio{
+    width: 200px;
+    height: 176px;
+  }
+}
+
+@media (max-width: 470px){
+  .gamejolt{
+    width: 250px;
+  }
+  .logo{
+    width: 72%;
+  }
+}
+
+/* Fonts */
+@font-face {
+  font-family: myFont;
+  src: url("../NokiaStandard\ Regular.otf");
+}
+* {
+  font-family: myFont;
+}
