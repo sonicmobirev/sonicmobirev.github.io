@@ -1,0 +1,175 @@
+/* Main Tags */
+footer div{
+  background-image: url("img/ashiba.gif");
+  height: 23px;
+}
+h2{
+  padding-top: 20px;
+  margin: 0 auto;
+}
+header{
+  background-image: url("bg/sgba_menu_back.gif");
+}
+header div a{
+  width: 120px;
+}
+header div a, nav a, .burger1, .burger2, .index a{
+  margin: 10px;
+}
+header div a, nav a{
+  background-color: #1CBBB4;
+  box-shadow: 0 0 0 1px #0BA59E, 0 0 0 2px #D2F1F0, 0 0 0 3px black;
+}
+header div a, .anchor a, .navbutton a{
+  border-radius: 15px;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+header div a, .navbutton a{
+  height: 23px;
+  right: 30px;
+  padding-left: 24px;
+}
+header div a:hover, nav a:hover, .button-active{
+  background-color: #00F4DB;
+  box-shadow: 0 0 0 1px #00D1BD, 0 0 0 2px #D2F1F0, 0 0 0 3px black;
+}
+header div div{
+  margin: 0 -20px;
+}
+header .b-char{
+  margin-left: 24px;
+}
+nav{
+  height: calc(100% - 100px);
+  padding-top: 10px;
+  top: 96px;
+  background-image: url("bg/sgba_menu_back.gif");
+}
+nav div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Custom Classes */
+.anchor a{
+  width: 200px;
+  margin: 20px auto;
+  right: 30px;
+  padding-left: 42px;
+}
+.b-char{
+  z-index: 1;
+  top: 3px;
+  position: relative;
+}
+.burger1, .burger2{
+  border-radius: 8px;
+  background-color: #1CBBB4;
+  box-shadow: 0 0 0 2px #0BA59E, 0 0 0 4px #D2F1F0, 0 0 0 6px black;
+}
+.burger1:hover, .burger2:hover{
+  background-color: #00F4DB;
+  box-shadow: 0 0 0 2px #00D1BD, 0 0 0 4px #D2F1F0, 0 0 0 6px black;
+}
+.color1 h1{
+  background: linear-gradient(to right, #680000, #F83800, #680000);
+}
+.color1 h2{
+  background-image: url("img/title1.png");
+}
+.color1 h2, .color1 .title{
+  background-color: #F83000;
+}
+.color2 h1{
+  background: linear-gradient(to right, #000055, #0000F8, #000055);
+}
+.color2 h2{
+  background-image: url("img/title2.png");
+}
+.color2 h2, .color2 .title{
+  background-color: #0000F8;
+}
+.color3 h1{
+  background: linear-gradient(to right, #684800, #F8D800, #684800);
+}
+.color3 h2{
+  background-image: url("img/title3.png");
+}
+.color3 h2, .color3 .title{
+  background-color: #F8D800;
+}
+.color4 h1{
+  background: linear-gradient(to right, #006000, #00D800, #006000);
+}
+.color4 h2{
+  background-image: url("img/title4.png");
+}
+.color4 h2, .color4 .title{
+  background-color: #00D800;
+}
+.color5 h1{
+  background: linear-gradient(to right, #5E5E5E, #B8B8B8, #5E5E5E);
+}
+.color5 h2{
+  background-image: url("img/title5.png");
+}
+.color5 h2, .color5 .title{
+  background-color: #B8B8B8;
+}
+.color6 h1{
+  background: linear-gradient(to right, #0068C0, #00C8F8, #0068C0);
+}
+.color6 h2{
+  background-image: url("img/title6.png");
+}
+.color6 h2, .color6 .title{
+  background-color: #00C8F8;
+}
+.color7 h1{
+  background: linear-gradient(to right, #600068, #F800F8, #600068);
+}
+.color7 h2{
+  background-image: url("img/title7.png");
+}
+.color7 h2, .color7 .title{
+  background-color: #F800F8;
+}
+.color8 h1{
+  background: linear-gradient(to right, #663300, #F87C00, #663300);
+}
+.color8 h2{
+  background-image: url("img/title8.png");
+}
+.color8 h2, .color8 .title{
+  background-color: #F87C00;
+}
+.color9 h1{
+  background: linear-gradient(to right, #660027, #F888A8, #660027);
+}
+.color9 h2{
+  background-image: url("img/title9.png");
+}
+.color9 h2, .color9 .title{
+  background-color: #F888A8;
+}
+.external{
+  max-width: calc(100% - 10px);
+  background: linear-gradient(to bottom, #00394A, #0AB7E3);
+  border: 4px solid #10C6FF;
+  border-top: 36px solid #10C6FF;
+  box-shadow: 4px 4px 0 black;
+}
+.external a:hover{
+  background-color: white;
+}
+.external h3{
+  margin-top: -34px;
+  margin-bottom: 12px;
+}
+.navbutton{
+  width: 230px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Page - Sonic Advance Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg4.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <div>
+          <img src="../btn/btn_a.gif" class="b-char"><a href="../main/updates.html" class="button">Updates</a>
+        </div>
+        <div>
+          <img src="../btn/btn_b.gif" class="b-char"><a href="../main/projects.html" class="button">Projects</a>
+        </div>
+        <div>
+          <img src="../btn/btn_c.gif" class="b-char"><a href="../main/hints.html" class="button">Tips & Hints</a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="../btn/btn_d.gif" class="b-char"><a href="../main/museum.html" class="button">Museum</a>
+        </div>
+        <div>
+          <img src="../btn/btn_e.gif" class="b-char"><a href="../main/support.html" class="button-active">Support</a>
+        </div>
+      </div>
+      <a href="../../index.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav class="mainmenu" id="myLeftNav">
+      <div class="flex-row navbutton">
+        <img src="../btn/btn_a.gif" class="b-char"><a href="../main/updates.html" class="button">Updates</a>
+      </div>
+      <div class="flex-row navbutton">
+        <img src="../btn/btn_b.gif" class="b-char"><a href="../main/projects.html" class="button">Projects</a>
+      </div>
+      <div class="flex-row navbutton">
+        <img src="../btn/btn_c.gif" class="b-char"><a href="../main/hints.html" class="button">Tips & Hints</a>
+      </div>
+      <div class="flex-row navbutton">
+        <img src="../btn/btn_d.gif" class="b-char"><a href="../main/museum.html" class="button">Museum</a>
+      </div>
+      <div class="flex-row navbutton">
+        <img src="../btn/btn_e.gif" class="b-char"><a href="../main/support.html" class="button-active">Support</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color4">
+      <h1>Q&A Page</h1>
+      <article>
+        <p>If you want to ask questions about Sonic Advance Revival and game modding, you may find the answers that you are looking for in this page!</p>
+        <p><strong>Select a question to showcase the answer.</li></ul></strong></p>
+      </article>
+      <br id="asked"><h2>Frequently Asked Questions</h2>
+      <article>
+        <a class="question" onclick="toggleText(0)" id="button0">
+          <span id="arrow0" style="rotate: 0deg;">&#10148;</span>
+          Why does the game have a terrible frame rate?
+        </a>
+        <div id="answer0" class="answer" style="display: none;">
+          <p>
+            The game is actually intended to run at such a low frame rate. This is not a glitch, nor a performance issue.<br>
+            For more information, check out the <a href="../projects/60fps.html"><strong>Project 60fps</strong></a> page.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(1)" id="button1">
+          <span id="arrow1" style="rotate: 0deg;">&#10148;</span>
+          Why can't I install the game?
+        </a>
+        <div id="answer1" class="answer" style="display: none;">
+          <p>
+            Because the game is designed for older Android devices, you may encounter an "Unsafe app blocked" message. When this occurs, press "Install anyway" to proceed.
+          </p>
+          <img src="../../img/install.png" class="center">
+          <p>
+            If the problem still persists, contact <strong>Furrican</strong> via the <a href="contact.html"><strong>Contact</strong></a> page.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(2)" id="button2">
+          <span id="arrow2" style="rotate: 0deg;">&#10148;</span>
+          Is Sonic Advance Revival safe?
+        </a>
+        <div id="answer2" class="answer" style="display: none;">
+          <p>
+            Yes. Like many Sonic fangames, this game does not contain any malware or other malicious programs whatsoever.
+          </p>
+          <p>
+            However, if your antivirus says otherwise, it's most likely a false alarm.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(3)" id="button3">
+          <span id="arrow3" style="rotate: 0deg;">&#10148;</span>
+          Can I play Sonic Advance Revival on PC?
+        </a>
+        <div id="answer3" class="answer" style="display: none;">
+          <p>
+            Of course. To do so, you need an Android emulator (like BlueStacks).
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(4)" id="button4">
+          <span id="arrow4" style="rotate: 0deg;">&#10148;</span>
+          When will the Tiny Chao Garden come out?
+        </a>
+        <div id="answer4" class="answer" style="display: none;">
+          <p>
+            There are no plans on adding the Tiny Chao Garden from the original GBA version.
+          </p>
+          <p>
+            However, it would be nice to partner with someone who can make a fanmade Tiny Chao Garden for Android devices.
+          </p>
+        </div>
+        <br>
+      </article>
+      <br id="extra"><h2>Extra Questions</h2>
+      <article>
+        <a class="question" onclick="toggleText(10)" id="button10">
+          <span id="arrow10" style="rotate: 0deg;">&#10148;</span>
+          Is Sonic Advance Revival a fangame?
+        </a>
+        <div id="answer10" class="answer" style="display: none;">
+          <p>
+            No. <strong>Sonic Advance Revival is actually a mod of an already existing Android port of Sonic Advance</strong>.<br>
+            This Android port was released in 2011 via a service named <a href="https://segaretro.org/Puyo_Puyo!_Sega" target="_blank"><strong>Puyo Puyo! Sega</strong></a>. This service is provided by SEGA exclusively for Japanese mobile phones.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(11)" id="button11">
+          <span id="arrow11" style="rotate: 0deg;">&#10148;</span>
+          Why is the music different from the original GBA version?
+        </a>
+        <div id="answer11" class="answer" style="display: none;">
+          <p>
+            Because the Android port of Sonic Advance was designed alongside other games on Japanese mobile phones in mind, the soundtrack are composed of .mid music tracks.<br>
+            A few music tracks are different from the original GBA version, due to those replaced (the Options theme, Invincibility theme and the 2 first bosses from X-Zone) were licensed by an outsourced team, and not owned by SEGA.
+          </p>
+          <p>
+            Whereas the <strong>GBA MIX</strong> soundtrack in the game mod isn't meant to take the same soundtrack from the original GBA version.<br>
+            Instead, it remixes the <strong>MIDI</strong> soundtrack by using the instruments from the original GBA version (with the exception being the Invincibility theme).
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(12)" id="button12">
+          <span id="arrow12" style="rotate: 0deg;">&#10148;</span>
+          The game stops working while playing. What can I do?
+        </a>
+        <div id="answer12" class="answer" style="display: none;">
+          <p>
+            If the game stays on the a black screen before starting a stage, that means the game is actually taking more time to load, most likely due to your Android device being weaker in performance.<br>
+            Because of the new sound system in place, the game may load longer than expected, even with the tips screen option turned off.
+          </p>
+          <p>
+            If the game soft-locks at a certain point, please report this issue to <strong>Furrican</strong> via the <strong>Contact</strong> menu.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(13)" id="button13">
+          <span id="arrow13" style="rotate: 0deg;">&#10148;</span>
+          Is it possible to transfer save data to another device?
+        </a>
+        <div id="answer13" class="answer" style="display: none;">
+          <p>
+            Unfortuantely, Sonic Advance Revival does not allow you to load save data from external save files.
+          </p>
+          <p>
+            However, transferring save data is a feature that will likely be available in a future update.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(14)" id="button14">
+          <span id="arrow14" style="rotate: 0deg;">&#10148;</span>
+          Which version of Sonic Advance the Revival mod is running on?
+        </a>
+        <div id="answer14" class="answer" style="display: none;">
+          <p>
+            Sonic Advance Revival is using the Chinese version of the Android port of Sonic Advance. <strong>This version was published by a Chinese mobile service named eGame</strong> (爱游戏).<br>
+            This version was chosen since the <strong>MOST Mods</strong> release (v3.0.0), as it features an external link option in the main menu, which allows to link the game to a website.
+          </p>
+        </div><br>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©SONICTEAM/SEGA CORPORATION, 2001, 2011, 2013. All rights reserved.<br>
+          SONIC ADVANCE, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
