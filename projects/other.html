@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Projects - Sonic Advance Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg3.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <div>
+          <img src="../btn/btn_a.gif" class="b-char"><a href="../main/updates.html" class="button">Updates</a>
+        </div>
+        <div>
+          <img src="../btn/btn_b.gif" class="b-char"><a href="../main/projects.html" class="button-active">Projects</a>
+        </div>
+        <div>
+          <img src="../btn/btn_c.gif" class="b-char"><a href="../main/hints.html" class="button">Tips & Hints</a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="../btn/btn_d.gif" class="b-char"><a href="../main/museum.html" class="button">Museum</a>
+        </div>
+        <div>
+          <img src="../btn/btn_e.gif" class="b-char"><a href="../main/support.html" class="button">Support</a>
+        </div>
+      </div>
+      <a href="../../index.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <a href="../main/projects.html" class="button">&#8617; BACK</a>
+      <a href="#translation" onclick="closeNav()" class="button">Game Translation</a>
+      <a href="#hearts" onclick="closeNav()" class="button">Amy's Hearts Glitch</a>
+    </nav>
+    <section onclick="closeNav()" class="color3">
+      <h1>Other Projects</h1>
+      <br id="translation"><h2>Game Translation</h2>
+      <article>
+        <p>
+          If you want to help for the translation, either by adding new languages or even correcting probable grammar/verbal inconsistencies, you can find the text files and sprite sheets to translate in the <strong>lang</strong> folders.
+          The <strong>lang</strong> folders are located in the <strong>assets</strong> folder.
+        </p>
+        <p>
+          Here are the available languages in the game and their folder names:<br>
+          <ul><strong>
+            <li>lang0: English</li>
+            <li>lang1: French</li>
+            <li>lang2: Spanish</li>
+            <li>lang3: Brazilian Portuguese</li>
+            <li>lang4: German</li>
+            <li>lang5: Italian</li>
+            <li>lang6: Russian</li>
+            <li>lang7: Japanese</li>
+            <li>lang8: Simplified Chinese</li>
+          </strong></ul>
+        </p>
+        <p>
+          And here are the possible languages that can be added in the game:<br>
+          <ul><strong>
+            <li>Latin Spanish</li>
+            <li>Traditional Portuguese</li>
+            <li>Turkish</li>
+            <li>Polish</li>
+            <li>Traditional Chinese</li>
+          </strong></ul>
+        </p>
+        <p>You can also work on other languages of your preferences. However, some languages may only be verified by your own responsibility.</p>
+      </article>
+      <br id="hearts"><h2>Amy's Hearts Glitch</h2>
+      <article>
+        <p>In the Android port of Sonic Advance, there is a glitch that hasn't been fixed yet.</p>
+        <img class="center" src="img/hearts.png">
+        <p>
+          <strong>HOW TO PERFORM THE GLITCH:</strong><br>
+          When playing as Amy, perform a Hammer attack and pause the game immediately after.
+          Then, quit the game and start a game afterwards.
+          Once done correctly, the game soft-locks and your only option is to close the game application.
+        </p>
+        <p>
+          The reason why this occurs is because of the hearts displaying on screen.
+          When you quit a game with hearts displaying, replaying a game will cause a graphical glitch.
+        </p>
+      </article>
+      <article>
+        <br><img class="center" src="img/project2.PNG">
+        <p>
+          <strong>HOW TO SOLVE IT:</strong><br>
+          Here is the code to understand how the hearts are displaying.
+          It is located in the <strong>PlayerAmy</strong> file of the <strong>SonicGBA</strong> folder.
+        </p>
+        <p>
+          The solution in theory would be to tweak the code so the hearts will disappear when we pause or quit the game.
+        </p>
+        <p>
+          In the Revival mod, there is a condition that prevents players from pausing the game when performing a Hammer attack.
+          This reduces the chance of causing the soft-lock, but this isn't a great solution.
+        </p>
+        <p>
+          If you can find a way to fix the issue, the condition to prevent players from pausing can be lifted.
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©SONICTEAM/SEGA CORPORATION, 2001, 2011, 2013. All rights reserved.<br>
+          SONIC ADVANCE, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
