@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Editor - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg8.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom active"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <div>
+        <a href="../main/manual.html" class="button">&#8617; BACK</a>
+        <a href="#basics" onclick="closeNav()" class="button">Basics</a>
+        <a href="#objects" onclick="closeNav()" class="button">Objects</a>
+        <a href="#music" onclick="closeNav()" class="button">Music Options</a>
+        <a href="#maps" onclick="closeNav()" class="button">Map Options</a>
+        <a href="#config" onclick="closeNav()" class="button">Configurations</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color8">
+      <h1>Map Editor</h1>
+      <article>
+        <p>
+          This is the page where you can follow instructions on how to use the <strong>Map Editor</strong>.
+        </p>
+        <p>
+          If you encounter glitches or other problems in the <strong>Map Editor</strong>, some of your answers can be found in the <a href="../support/questions.html#gamemaps"><strong>Q&A Page</strong></a>.
+        </p>
+      </article>
+      <br id="basics"><h2>Basics</h2>
+      <article>
+        <br><img class="center" src="img/maps0.png">
+        <p>
+          <strong>FIRST STEPS:</strong><br>
+          The <strong>Map Editor</strong> is a feature that allows you to check the different game maps and even modify them to test them out!
+        </p>
+        <p>
+          When entering the <strong>Map Editor</strong>, you will see the top layout of the first stage.
+          You can check the stage layout by sliding or zooming the stage canvas.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>MENUS & OPTIONS:</strong><br>
+          At the top of the screen is a selection of menus and options.
+          You can find the different usage of each option by checking the different sections of this page.
+          The stage map is indicated by its Room number.
+        </p>
+        <p>
+          If you want to get a higher view of the canvas, you can hide the menu section by pressing the <strong>&#9776;</strong> icon.
+          Press this icon again to display the menu section back.
+        </p>
+        <p>
+          The black/colored box on the top-right side of the screen is actually an option.
+          It allows you to change the color of the stage canvas.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>OPTION TYPES:</strong><br>
+          The options are explained in the different sections of the page.
+        </p>
+        <p>
+          Here are the sections listing the options:<br>
+          <ul>
+            <li><strong>Music Options</strong>: <strong>MUSIC CONTROLS</strong>, <strong>AMBIENT MUSIC</strong> and <strong>&#x266B;</strong> icon.</li>
+            <li><strong>Map Options</strong>: <strong>SELECT ROOM</strong>, <strong>RESET MAP</strong>, <strong>SAVE MAP</strong>, <strong>LOAD MAP</strong> and <strong>PLAY MAP</strong>.</li>
+            <li><strong>Configurations</strong>: <strong>USER REPOSITORY</strong> and <strong>CONFIG</strong>.</li>
+          </ul>
+        </p>
+      </article>
+      <br id="objects"><h2>Objects</h2>
+      <article>
+        <p>
+          <strong>DESCRIPTION:</strong><br>
+          In the <strong>Map Editor</strong>, the stage layouts are represented by objects.
+          Each object has its type number and coordinates.
+        </p>
+        <p>
+          The coordinates are represented by the X and Y positions.
+          The X position can go from between 0 to 15 from left to right, whereas the Y position can go from from 0 to 65535 from top to bottom.
+        </p>
+        <p>
+          When selecting an empty space, you will be granted with a list of object types.
+          You can also select a placed object to change its type or remove it.
+        </p>
+        <p>
+          Some object placements are determined by gray sprites next to the visual object sprite to illustrate the accurate in-game object postions.
+        </p>
+      </article>
+      <article>
+        <br><img class="center" src="img/maps1.png">
+        <p>
+          <strong>OBJECT TYPES LIST:</strong><br>
+          <ul>
+            <li><strong>Type 0</strong>: Basic platform</li>
+            <li><strong>Type 1</strong>: Fragile platform</li>
+            <li><strong>Type 2</strong>: Spike platform</li>
+            <li><strong>Type 3</strong>: Ring</li>
+            <li><strong>Type 4</strong>: Spring platform</li>
+            <li><strong>Type 5</strong>: Green hoop</li>
+            <li><strong>Type 6</strong>: Blue hoop</li>
+            <li><strong>Type 7</strong>: Enemy</li>
+            <li><strong>Type 8</strong>: Goal post (check its section for more information)</li>
+            <li><strong>Type 9</strong>: Basic platform (moving)</li>
+            <li><strong>Type 10</strong>: Twinkling stars</li>
+            <li><strong>Type 11</strong>: Spring platform (moving)</li>
+            <li><strong>Type 12</strong>: Spike platform (moving)</li>
+            <li><strong>Type 13</strong>: Fragile platform (moving)</li>
+            <li><strong>Type 14</strong>: Checkpoint (check its section for more information)</li>
+            <li><strong>Type 15</strong>: Undefined</li>
+          </ul>
+        </p>
+      </article>
+      <article>
+        <br><img class="center" src="img/maps2.png">
+        <p>
+          <strong>STARTING POINT:</strong><br>
+          <strong>The starting point of the stage is determined by the lowest basic platform placed (Type 0).</strong>
+          Any other objects placed below won't be present in the stage.
+        </p>
+        <p>
+          If you place multiple basic platforms at the lowest, the starting point will be the platform placed to the right.
+          There is no other way to change the starting point position.
+        </p>
+      </article>
+      <article>
+        <p>
+          <br><img class="center" src="img/maps3.png">
+          <strong>CHECKPOINTS:</strong><br>
+          Checkpoints must be placed in a specific way to work correctly. Here are the instructions on how to use them:
+          <ul>
+            <li>
+              <strong>Checkpoints must be placed on a basic platform (Type 0) at a Y position of 1 heigher than the basic platform.</strong>
+              You can placed a platform either at the same X position or 2 to the right, but 1 to the right is recommended.
+            </li>
+            <li>
+              <strong>If you place a platform next to another with a checkpoint on top, you have to land on this new platform to activate the checkpoint.</strong>
+              It is recommended to remove this platform to prevent this glitch to occur.
+            </li>
+          </ul>
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>GOAL POST:</strong><br>
+          The goal post is a necessary object type to clear a stage. It serves multiple purpose depending on the stage.
+        </p>
+        <p>
+          In ACT 1 and 2 stages, the goal post represents the end of the stage. Reach the height of the goal post to clear the stage.
+        </p>
+        <img class="center" src="img/maps4.png">
+        <p>
+          In ACT 3 stages, the goal post makes you ascend until a certain height.
+          <strong>The goal post is necessary to make Dr. Eggman appear.</strong>
+          Dr. Eggman is located at the highest position of the stage. He must be defeated to clear the stage.
+        </p>
+        <p>
+          You can add multiple goal posts to make you ascend even more, but doing so will make Dr. Eggman behave faster each time.
+        </p>
+      </article>
+      <br id="music"><h2>Music Options</h2>
+      <article>
+        <br><img class="center" src="img/maps5.png">
+        <p>
+          <strong>MUSIC CONTROLS:</strong><br>
+          The <strong>MUSIC CONTROLS</strong> menu is where you can select a custom music for your stages.
+        </p>
+        <p>
+          If you select <strong>Select Music</strong>, you will be granted with a library of soundtracks from various Sonic games.
+        </p>
+        <p>
+          If you want to replay a music track, you can do so by selecting <strong>Restart Music</strong>.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>HOW TO USE CUSTOM MUSIC IN MAPS:</strong><br>
+          First, you need to select a music by going through the library of soundtracks.
+          Select your preferred music track in the soundtracks.
+        </p>
+        <p>
+          After selecting a music track, the music will play in the background.
+          Though this may take a few seconds, as the music tracks are stored in the Internet Archive.
+        </p>
+        <p>
+          Finally, to use the selected music to be played in your stage, you need to check the Custom Music option in the <strong>CONFIG</strong> menu.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>OTHER MUSIC OPTIONS:</strong><br>
+          The <strong>AMBIENT MUSIC</strong> option allows you to listen to music to give an ambient while using the Map Editor.
+        </p>
+        <p>
+          You can also pause and resume the music by pressing the <strong>&#x266B;</strong> icon.
+        </p>
+      </article>
+      <br id="maps"><h2>Map Options</h2>
+      <article>
+        <br><img class="center" src="img/maps6.png">
+        <p><strong>SELECT ROOM:</strong><br>
+          The stages in the editor are named rooms.
+          There are 21 rooms in total in the game to check and modify.
+        </p>
+        <p>
+          <strong><span style="color: orange;">DISCLAIMER:</span> Changing rooms makes you lose your stage layout modifications.
+            Make sure to save and load your map before changing rooms to keep your modifications.</strong>
+        </p>
+        <p>
+          You can see the room number on the menu bar, but the rooms are also recognizable by the sprites on the canvas.
+        </p>
+        <p>
+          Here are the zones that the rooms represent:<br>
+          <ul>
+            <li><strong>Room 1</strong>: Green Hill Zone</li>
+            <li><strong>Room 2</strong>: Blue Sky Zone</li>
+            <li><strong>Room 3</strong>: Mechanical Zone</li>
+            <li><strong>Room 4</strong>: Mountain Zone</li>
+            <li><strong>Room 5</strong>: Jungle Zone</li>
+            <li><strong>Room 6</strong>: Cosmic Zone</li>
+            <li><strong>Room 7</strong>: Bonus Zone</li>
+          </ul>
+        </p>
+        <p>
+          <p><strong>RESET MAP:</strong><br>
+          The <strong>RESET MAP</strong> option allows you to clear the stage layout.<br>
+          You can bring the original stage layout back by selecting the same stage room in the <strong>SELECT ROOM</strong> menu.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>SAVE MAP:</strong><br>
+          When pressing <strong>SAVE MAP</strong> for the first time, you have to select a folder to determine the <strong>SonicJump subfolder</strong> directory, where your modified map files will be saved.
+        </p>
+        <img class="center" src="img/maps7.png">
+        <p>
+          After selecting a folder directory, pressing <strong>SAVE MAP</strong> will ask you save your map as a .bin (map.bin) or .txt file (decoded_map.txt).
+        </p>
+        <p>
+          The map files don't overwrite, so anytime you save a map file, it creates another one. So make sure to track down your progress.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>LOAD MAP:</strong><br>
+          Anytime you enter the <strong>Map Editor</strong>, it loads the regular game map by default. If you want to check your map, you have to load it.
+        </p>
+        <p>
+          To load your progress, press the <strong>LOAD MAP</strong> option and search for a <strong>map.bin</strong> or <strong>decoded_map.txt</strong> file located in the <strong>SonicJump subfolder</strong>.
+          This folder is most probably located in the <strong>&#x2913; DOWNLOAD</strong> folder of your internal device.
+        </p>
+      </article>
+      <article>
+        <br><img class="center" src="img/maps8.png">
+        <p>
+          <strong>PLAY MAP:</strong><br>
+          After loading or saving your map, you can play and test it by pressing <strong>PLAY MAP</strong>.
+          This option will bring you to the Stage Select menu.
+        </p>
+        <p>
+          Select the corresponding stage to play your modified stage.<br>
+          For example: if you have made your own stage in Room 1-1, you have to select the first stage of the game to play it.
+        </p>
+      </article>
+      <br id="config"><h2>Configurations</h2>
+      <article>
+        <br><img class="center" src="img/maps9.png">
+        <p><strong>USER REPOSITORY:</strong><br>
+          The <strong>USER REPOSITORY</strong> option is used to read the <strong>config.ini</strong> file from the user repository, which contains the name of the user textures and graphics for the maps.
+        </p>
+        <p>
+          Insert the repository link and the Map Editor will load the custom graphics.
+        </p>
+      </article>
+      <article>
+        <br><img class="center" src="img/maps10.png">
+        <p>
+          <strong>CONFIG MENU:</strong><br>
+          The <strong>CONFIG</strong> menu is where you can configure additional stage settings.
+        </p>
+        <p>
+          <strong><span style="color: orange;">DISCLAIMER:</span> The CONFIG menu doesn't track all configured settings after saving. Meaning that to make an additional modification, you have to configure all the settings again.</strong>
+        </p>
+        <p>
+          Here are the different settings available:
+          <ul>
+            <li><strong>Life Count</strong>: Set the life counter to start the stage with a specific number of remaining lives (2 by default).</li>
+            <li><strong>Stage Name</strong>: Change the name of the stage (zone name by default).</li>
+            <li><strong>Act Number</strong>: Change the act number of the stage (1, 2 or 3 by default).</li>
+            <li><strong>BLOCKPICS</strong>: Change the sprites of the platforms and enemy.</li>
+            <li><strong>EDGEPICS</strong>: Change the side background of the stage.</li>
+            <li><strong>EXTRASPIC</strong>: Change the sprites of the ring, spring platform and Dr. Eggman.</li>
+            <li><strong>STRIPPICS</strong>: Change the background environment of the stage.</li>
+            <li><strong>TILESPICS</strong>: Change the background tiles of the stage.</li>
+            <li><strong>Custom Music</strong>: When checked, the stage will play the selected music from the <strong>MUSIC CONTROLS</strong> menu.</li>
+          </ul>
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
