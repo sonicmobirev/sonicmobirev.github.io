@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Mobile Museum</title>
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/mobirev.css">
+    <script type="text/javascript" src="../../scripts/mobirev.js"></script>
+  </head>
+  <body style="background-image: url('../../bg/v3_bkgn_small.gif');">
+    <header>
+      <span class="burgerleft" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <a href="../../index.html"><img src="../../img/mobirev_small.png"></a>
+      <span class="burgerright" id="rightBurger" onclick="rightNav()">&#9733;</span>
+    </header>
+    <nav class="navleft" id="myLeftNav">
+      <div>
+        <a href="../../main/updates.html" class="button">UPDATES</a>
+        <a href="../../apps/index.html" class="button">ANDROID APPS</a>
+        <a onclick="toggleNav()" id="button" class="button-active sub"><span id="arrow" style="rotate: 90deg;">&#10148;</span>MUSEUM</a>
+        <div class="submenu" id="menu">
+          <a href="../index.html" onclick="closeNav()"  class="button smalltext">Introduction</a>
+          <a href="../sonic_cafe/index.html" onclick="closeNav()"  class="button smalltext">Sonic Cafe</a>
+          <a href="../puyo_puyo_sega/index.html" onclick="closeNav()"  class="button smalltext">Puyo Puyo! Sega</a>
+          <a href="index.html" onclick="closeNav()"  class="button active smalltext">Gameloft</a>
+        </div>
+        <a href="../../main/gallery.html" class="button">GALLERY</a>
+        <a href="../../main/support.html" class="button">SUPPORT</a>
+      </div>
+    </nav>
+    <nav class="navright featured" id="myRightNav">
+      <h2>FEATURED APPS</h2>
+      <div>
+        <img src="../../apps/com.sonicmobirev.sonicadvance/img/logo1.png">
+        <a href="../../apps/com.sonicmobirev.sonicadvance/index.html" class="button smalltext">Sonic Advance</a>
+      </div>
+      <div>
+        <img src="../../apps/com.sonicmobirev.sonicjumprevival/img/logo1.png">
+        <a href="../../apps/com.sonicmobirev.sonicjumprevival/index.html" class="button smalltext">Sonic Jump Revival</a>
+      </div>
+      <div>
+        <img src="../../apps/com.sonicmobirev.happy_sonic/img/logo1.png">
+        <a href="../../apps/com.sonicmobirev.happy_sonic/index.html" class="button smalltext">Happy Sonic! Live Wallpaper</a>
+      </div>
+      <div>
+        <img src="../../apps/com.sega.sonicjumpfever/img/logo1.png">
+        <a href="../../apps/com.sega.sonicjumpfever/index.html" class="button smalltext">Sonic Jump Fever</a>
+      </div>
+      <div>
+        <img src="../../apps/com.sega.soniccdlite/img/logo1.png">
+        <a href="../../apps/com.sega.soniccdlite/index.html" class="button smalltext">Sonic CD Lite</a>
+      </div>
+      <div>
+        <img src="../../apps/com.sega.sonic4ep2lite/img/logo1.png">
+        <a href="../../apps/com.sega.sonic4ep2lite/index.html" class="button smalltext">Sonic 4 Episode II Lite</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()">
+      <article class="block">
+        <div class="center">
+          <img src="img/Gameloft_logos.png">
+        </div>
+        <h2>Gameloft</h2>
+        <h3>Introduction</h3>
+        <p>
+          Gameloft is a French video game company based in Paris, founded by Michel Guillemot, one of the 5 founders of Ubisoft, on December 14th, 1999.
+        </p>
+        <p>
+          Gameloft produces games for phones equipped with J2ME, BREW, Symbian, iOS and Android mobile operating systems.
+          Gameloft is primarily known for porting console and PC games to mobile phones.
+          It often focuses on Ubisoft franchises, but has also ported franchises from other companies like Sonic the Hedgehog.
+        </p>
+        <p>
+          Gameloft has also created new video game franchises, such as the Asphalt, Dungeon Hunter, Gangstar, Modern Combat, Nights, N.O.V.A., Platinum, Real Football, Siberian Strike, and TV Show King series.
+        </p>
+        <p>
+          Millions of Gameloft games are downloaded worldwide every day, frequently placing the company at the top of the most downloaded game charts on the Apple App Store and Google Play Store.
+        </p>
+        <hr>
+        <h3>About the Sonic games</h3>
+        <p>
+          Between 2009 and 2017, Gameloft has released multiple Sonic games.
+          Most of them are ports of Sonic games released by SEGA.
+        </p>
+        <p>
+          Each game has their own versions designed for certain mobile devices.
+          With the exception of Sonic Runners Adventure, each game has 3 versions: short, medium and long.
+        </p>
+        <p>
+          The short versions are usually made for mobile devices with a screen resolution of 128x128.
+          They contain the least amount of content and the game graphics are redesigned to work within the limitations of lower-end devices.
+        </p>
+        <p>
+          The medium versions are similar to the short versions, but they feature additional content over the short versions.
+          These versions are usually made for mobile devices with screen resolutions between 128x160 and 240x320.
+          In 128x160 devices, the game graphics look like the ones found in the short versions.
+        </p>
+        <p>
+          The long versions are the ones that most people know.
+          These versions made for mobile devices with screen resolutions of 240x320, but also higher (with the exception of Sonic & SEGA All-Stars Racing).
+          They usually contain all the content that the game is intended to have.
+        </p>
+        <p>
+          Some versions with higher screen resolutions have touch controls for mobile devices with touchscreens.
+          However, due to the limitations of touchscreens on certain mobile devices, the early games do not support multi-touch, making the controls a bit awkward to use.
+        </p>
+        <hr>
+        <h3>Choose a game</h3>
+        <div class="center wrap">
+          <a href="Sonic_Unleashed/index.html" class="button game"><img src="Sonic_Unleashed/img/SonicUnleashed_J2ME_240x320_logo.png"></a>
+          <a href="Sonic_SEGA_Racing/index.html" class="button game"><img src="Sonic_SEGA_Racing/img/SASASR_J2ME_176x220_logo.gif"></a>
+          <a href="Sonic_Advance/index.html" class="button game"><img src="Sonic_Advance/img/title_logo.png"></a>
+          <a href="Sonic_Runners_Adventure/index.html" class="button game"><img src="Sonic_Runners_Adventure/img/Sonic_Runners_Adventure_Logo.png"></a>
+        </div>
+        <hr>
+        <h3>Reference sources</h3>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Gameloft" target="_blank">Gameloft - Wikipedia</a><br>
+          <a href="https://raymanpc.com/wiki/script-fr/index.php?title=Gameloft&mobileaction=toggle_view_desktop" target="_blank">Gameloft — RayWiki, le wiki Rayman</a><br>
+          <a href="https://sonic.fandom.com/wiki/Gameloft" target="_blank">Gameloft | Sonic Wiki Zone | Fandom</a><br>
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <strong>
+        <p>Sonic Mobirev, 2026</p>
+        <p>Sonic Mobirev and its team are not affiliated with SEGA or any other companies involved in the present applications. We do not claim to own any copyrighted material that may appear in the applications or on this website, nor do we profit off of said material.</p>
+        <p>Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.</p>
+      </strong>
+    </footer>
+  </body>
+</html>
