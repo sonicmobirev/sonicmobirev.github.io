@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Rate Increase - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg4.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top active"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+        <div>
+          <a href="../main/projects.html" class="button">&#8617; BACK</a>
+          <a href="#disclaimer" class="button">Disclaimer</a>
+          <a href="#hexeditor" class="button">Hex Editor Settings</a>
+          <a href="#datfiles" class="button">Handling the .dat files</a>
+        </div>
+    </nav>
+    <section onclick="closeNav()" class="color4">
+      <h1>Language Files (.dat)</h1>
+      <br id="disclaimer"><h2>Disclaimer</h2>
+      <article>
+        <p><strong>This page explains an obsolete modding project.</strong></p>
+        <p>
+          Since the version 2.1.0 release, the language files have been converted from .dat to .json format.
+          Therefore, you don't need to learn anything from this page to mod Sonic Jump Revival.
+        </p>
+        <p>
+          With that said, you can try modding the official game version or the Classic mods of Sonic Jump and find the .dat files in the <strong>res/raw</strong> folder.
+        </p>
+      </article>
+      <br id="hexeditor"><h2>Hex Editor Settings</h2>
+      <article>
+        <p>
+          <strong>INTRODUCTION:</strong><br>
+          The language text are written in .dat files located in the <strong>res/raw</strong> folder. Each .dat file contain a different language.
+        </p>
+        <p>However, handling those files might be complicated for those who don't understand the logic behind them. Therefore, this section serves as a guide to explain how to handle these files.</p>
+        <p>First of all, .dat files are meant to be editable via a Hex Editor software tool.</p>
+        <img src="img/hxd0.PNG" class="center">
+        <p>
+          This is a screenshot of the <strong>HxD</strong> software on PC. The settings has been oversimplified for this guide. 
+        </p>
+        <p>
+          The first thing to understand before modifying the .dat files are a few important information to consider.<br>
+          First is the <strong>UInt8</strong> and <strong>UTF-8 code point</strong> values located in the <strong>Data inspector</strong> section, and the length number of selected characters located at the bottom of the window. These information are essential for the text editing.
+        </p>
+        <p>
+          Next, in the case of HxD, typing on the text doesn't add new characters. Instead, it overwrites the text, like in Insert mode.<br>
+          To add new characters in the text, you need to copy and paste characters.
+        </p>
+      </article>
+      <article>
+        <br><img src="img/hxd1.PNG" class="center">
+        <p>
+          <strong>.DAT FILE BASIC STRUCTURE:</strong><br>
+          On the screenshots, you have recognized the text written in English. However, the text are actually in text slots that are seperated by dots or other characters.
+        </p>
+        <p>
+          But before focusing on the text, you need to understand how the special characters work and how the <strong>UInt8</strong> value is counted.
+        </p>
+        <p>
+          First of all, some special characters are actually 8-bit values. These values are either meant to determines the number of text slots, or the length of a text slot.<br>
+          You can see the 8-bit value in the <strong>UInt8</strong> data of the <strong>Data inspector</strong> section.
+        </p>
+        <p>
+          8-bit values mean that you can make a value from 0 to 255. But you can make a value higher than 255 when more than one character is available in a set of characters.<br>
+          In those .dat files in particular, the 8-bit values starts at the character from the right side of the set.
+        </p>
+        <p>
+          For example, if you want to make a value of 240, the character hex values needs to be <strong>00 F0</strong>. Or you can write 240 for the first character from the right in the <strong>UInt8</strong> input.<br>
+        </p>
+        <p>
+          But if you want to make a value of 260, you need to make the second character from the right equals 1. Whereas the first character, you need to make this value equals 260-256. Therefore, the hex values should be <strong>01 04</strong>.<br>
+          You can't write down 260 in the <strong>UInt8</strong> data, due to the 8-bit value limit. Instead, you need to write 1 for the second character from the right, and 4 for the first.
+        </p>
+      </article>
+      <br id="datfiles"><h2>Handling the .dat files</h2>
+       <article>
+        <br><img src="img/hxd2.PNG" class="center">
+        <p>
+          <strong>NUMBER OF TEXT SLOTS:</strong><br>
+          And now, let's dive in the text. But first, let's talk about the first special character.
+        </p>
+        <p>
+          The first special character is located before the <strong>SONIC JUMP</strong> text slot. <span class="green">This character is actually one of 4 8-bit values which determine the number of text slots that the game expect to use</span>.
+        </p>
+        <p>
+          And since a character can have a value up to 255, that means we can make up to 255^4 text slots (4,228,250,625).
+        </p>
+        <p>
+          In this instance, the .dat file contains a total of 223 text slots. Therefore, this value should be 223.
+        </p>
+      </article>
+      <article>
+        <br><img src="img/hxd3.PNG" class="center">
+        <p>
+          <strong>TEXT SLOT LENGTH:</strong><br>
+          Next, let's talk about the "dots" separating each text.
+        </p>
+        <p>
+          <span class="orange">Each text slot contain 2 8-bit values before them</span>. They are actually special characters which determine the length of each text slot.
+        </p>
+        <p>
+          In the case of the <strong>SONIC JUMP</strong> text slot, <span class="green">the character on the right should has a value of 10, because the text takes 10 characters</span>.
+        </p>
+        <img src="img/hxd4.PNG" class="center">
+        <p>
+          And if you select the whole text in the slot, you can verify the length of the text slot.<br>
+          <span class="green">In this instance, the length number is 10</span>. Therefore, the 8-bit value before the start of the text slot should be 10.
+        </p>
+        <p>
+          The length value is really useful in case if you want to add new letters or other characters in the text slot.
+        </p>
+        <img src="img/hxd5.PNG" class="center">
+        <p>
+          If you want to add more than 255 characters in a text slot, you first need to count the length of the text slot.<br>
+          <span class="orange">In this instance, the length number is 529</span>.
+        </p>
+        <p>
+          Then, you need to calculate the required number for the 8-bit values.<br>
+          <span class="green">For this instance, being a value of 529 you need calculate 529-(256*2) = 17</span>.<br>
+          Therefore, the left character should have a value of 2 in <strong>UInt8</strong>, and the right one a value of 17 in <strong>UInt8</strong> (or <strong>02 11</strong> in hexadecimal).
+        </p>
+        <p>
+          As you can see, 529 has been substracted by 512. This is because 529-256 = 273, which is still a number higher than 256. Therefore, 273 should be substracted by 256 again.
+        </p>
+        <p>
+          NOTE: In the case of HxD, the length value is written in hexadecimal(h) by default. You can set the value to decimal(d) in the settings.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>SPECIFIC DOTS:</strong><br>
+          Now, you are probably wondering, what the difference between the many dots on the text?<br>
+          Well, the 8-bit values of each dot serve a purpose for the text. You can either make a line-break or an actual dot on the text.
+        </p>
+        <p>
+          For the actual dot, you can simply type a "." on the text. Its 8-value in <strong>UInt8</strong> equals 46.<br>
+          Whereas for the line-break, you need to type the 8-bit value of 10 in the <strong>UInt8</strong> input. This will display a line-break dot.
+        </p>
+      </article>
+      <article>
+        <p>
+          <strong>ACCENTS AND FOREIGN LANGUAGE CHARACTERS:</strong><br>
+          Next, let's talk about the accents and foreign language characters like the ones in Japanese or Chinese.<br>
+          If you type those type of characters in the text, the game won't boot. This is because the game do not read those characters as text. Instead, you need to use the <strong>UTF-8 code point</strong> input to type those type of characters.
+        </p>
+        <img src="img/hxd6.PNG" class="center">
+        <p>
+          By the way, for some reason, the apostrophes written in the .dat files count has quotes displaying in-game. If you want to make an apostrophe, you need to type or paste it in the <strong>UTF-8 code point</strong> input.
+        </p>
+        <p>
+          Keep in mind that doing so makes a set of characters in the text. Meaning that it takes more than one character. Be careful not to overwrite the text.
+        </p>
+        <p>
+          This setup also works for accents and other characters. Accents take 2 characters in text, whereas other characters like foreign language characters take 3 characters in text.
+        </p>
+        <p>
+          However, letters like "О́" cannot be included in the <strong>UTF-8 code point</strong> input, due to being not considered an 8-bit value. Keep this in mind when adding other characters.
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>

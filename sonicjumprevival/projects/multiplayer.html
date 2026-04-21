@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Mode - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg4.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top active"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <div>
+        <a href="../main/projects.html" class="button">&#8617; BACK</a>
+        <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
+        <a href="#solution1" onclick="closeNav()" class="button">Solution 1</a>
+        <a href="#solution2" onclick="closeNav()" class="button">Solution 2</a>
+        <a href="#solution3" onclick="closeNav()" class="button">Solution 3</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color4">
+      <h1>Multiplayer Mode</h1>
+      <br id="intro"><h2>Introduction</h2>
+      <article>
+        <p>
+          The goal of this project is to make the <strong>Multiplayer Mode</strong> enjoyable to play by solving the canvas issue and give this game mode purpose.
+        </p>
+        <p>
+          In fact, the <strong>Multiplayer Mode</strong> is actually present in the game, but you have to access it via the secret cheat code.
+          The main reason why this game mode is hidden is because of how it looks in gameplay.
+        </p>
+        <img class="center" src="img/multi0.png">
+        <p>
+          As you can see, during multiplayer, there is a canvas that displays on the top-left of the screen.
+          This canvas is the other player's screen.
+          Obviously, this is a problem, considering that the small canvas hides a part of the main player's screen.
+        </p>
+        <p>Down-below are different potential solutions to solve this issue.</p>
+      </article>
+      <br id="solution1"><h2>Solution 1</h2>
+      <article>
+        <br><img class="center" src="img/multi1.png">
+        <p>
+          <strong>SPLIT SCREEN:</strong><br>
+          <strong>The first solution would be to make each player canvas the same size by reducing the heights in half.</strong>
+        </p>
+        <p>
+          However, this setup is not suitable when the <strong>VIRTUAL PAD</strong> option is OFF.
+        </p>
+      </article>
+      <br id="solution1"><h2>Solution 2</h2>
+      <article>
+        <br><img class="center" src="img/multi2.png">
+        <p>
+          <strong>LANDSCAPE VIEW:</strong><br>
+          <strong>The second solution would be to make the game view landscape, so we can fit 2 canvases on the same screen.</strong>
+        </p>
+        <p>
+          However, like the split screen idea, this setup is not suitable when the <strong>VIRTUAL PAD</strong> option is OFF.
+          Also, it makes the canvas way smaller in size.
+        </p>
+      </article>
+      <br id="solution3"><h2>Solution 3</h2>
+      <article>
+        <br><img class="center" src="img/multi3.png">
+        <p>
+          <strong>2 CHARACTERS ON THE SAME CANVAS:</strong><br>
+          <strong>The better solution would be to make a function that makes the other player's character appear on one player's screen, like in most handheld multiplayer games.</strong>
+        </p>
+        <p>
+          But the problem is that this idea is way too complicated to make it possible.
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>

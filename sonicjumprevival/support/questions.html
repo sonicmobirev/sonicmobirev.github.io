@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Page - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg3.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom active"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav class="mainmenu" id="myLeftNav">
+      <div>
+        <a href="../main/updates.html" class="button spaced">Updates</a>
+        <a href="../main/projects.html" class="button spaced">Projects</a>
+        <a href="../main/onlinestages.html" class="button spaced">Online Stages</a>
+        <a href="../main/manual.html" class="button spaced">Game Manual</a>
+        <a href="../main/gallery.html" class="button spaced">Museum</a>
+        <a href="../main/support.html" class="button-active spaced">Support</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color3">
+      <h1>Q&A Page</h1>
+      <article>
+        <p>If you want to ask questions about Sonic Jump Revival and game modding, you may find the answers that you are looking for in this page!</p>
+        <p><strong>Select a question to showcase the answer.</strong></p>
+      </article>
+      <br id="asked"><h2>Frequently Asked Questions</h2>
+      <article>
+        <a class="question" onclick="toggleText(0)" id="button0">
+          <span id="arrow0" style="rotate: 0deg;">&#10148;</span>
+          The game doesn't boot up and instead showcases a list of applications. What can I do?
+        </a>
+        <div id="answer0" class="answer" style="display: none;">
+          <p>
+            If you boot up the game for the first time, you will be granted with the <strong>All files access</strong> menu with a list of applications present on your device.
+          </p>
+          <p>
+            Search for <strong>Sonic Jump Revival</strong> and then enable <strong>Allow access to manage all files</strong>. If you have done it correctly, you can hear the intro jingle in the background.
+          </p>
+          <p>
+            The files access permission is necessary for saving your game progress, options and map files.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(1)" id="button1">
+          <span id="arrow1" style="rotate: 0deg;">&#10148;</span>
+          Why does the game have a terrible frame rate?
+        </a>
+        <div id="answer1" class="answer" style="display: none;">
+          <p>
+            The game is actually intended to run at such a low frame rate. This is not a glitch, nor a performance issue.<br>
+            This is something that could be potentially fixed in the future.
+          </p>
+          <p>
+            For more information, check out the <a href="../projects/framerate.html"><strong>Frame Rate Increase</strong></a> project page.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(2)" id="button2">
+          <span id="arrow2" style="rotate: 0deg;">&#10148;</span>
+          Why can't I install the game?
+        </a>
+        <div id="answer2" class="answer" style="display: none;">
+          <p>
+            Because the game is designed for older Android devices, you may encounter an "Unsafe app blocked" message. When this occurs, press "Install anyway" to proceed.
+          </p>
+          <img src="../../img/install.png" class="center">
+          <p>
+            If the problem still persists, contact <strong>Furrican</strong> via the Game Jolt/itch.io project page, or via the <strong>Contact</strong> menu.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(3)" id="button3">
+          <span id="arrow3" style="rotate: 0deg;">&#10148;</span>
+          Is Sonic Jump Revival safe?
+        </a>
+        <div id="answer3" class="answer" style="display: none;">
+          <p>
+            Yes. Like many Sonic fangames, this game does not contain any malware or other malicious programs whatsoever.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(4)" id="button4">
+          <span id="arrow4" style="rotate: 0deg;">&#10148;</span>
+          Can I play Sonic Jump Revival on PC?
+        </a>
+        <div id="answer4" class="answer" style="display: none;">
+          <p>
+            Of course. To do so, you need an Android emulator (like BlueStacks).
+          </p>
+        </div><br>
+      </article>
+      <br><h2>Extra Questions</h2>
+      <article>
+        <a class="question" onclick="toggleText(10)" id="button10">
+          <span id="arrow10" style="rotate: 0deg;">&#10148;</span>
+          Is Sonic Jump Revival a fangame?
+        </a>
+        <div id="answer10" class="answer" style="display: none;">
+          <p>
+            No. <strong>Sonic Jump Revival is actually a mod of an already existing Android port of Sonic Jump</strong>.<br>
+            This Android port was released in 2011 via a service named <a href="https://segaretro.org/Puyo_Puyo!_Sega" target="_blank"><strong>Puyo Puyo! Sega</strong></a>. This service is provided by SEGA exclusively for Japanese mobile phones.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(11)" id="button11">
+          <span id="arrow11" style="rotate: 0deg;">&#10148;</span>
+          Why are the music and sound effects different?
+        </a>
+        <div id="answer11" class="answer" style="display: none;">
+          <p>
+            The Android port of Sonic Jump has issues with some of its music and sound effects. Some .mid instruments sound too loud.
+          </p>
+          <p>
+            Because of this, some music and the attack sound effect needed to be replaced by better audio quality.<br>
+            The game now contains .ogg files, instead of .mid.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(12)" id="button12">
+          <span id="arrow12" style="rotate: 0deg;">&#10148;</span>
+          Why is the game asking me to access data on my device?
+        </a>
+        <div id="answer12" class="answer" style="display: none;">
+          <p>
+            When booting Sonic Jump Revival for the first time, the game asks you for permission to access file data.<br>
+            If you allow permission, a folder named <strong>SonicJump</strong> will be created in the <strong>Android/media</strong> folder. The <strong>SonicJump</strong> folder is where your save file is located <strong>(sj_save.dat)</strong>.
+          </p>
+          <p>
+            However, while the game can export save data, there is currently no way to load save data. Transferring save data is a feature that will likely be available in a future update.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(13)" id="button13">
+          <span id="arrow13" style="rotate: 0deg;">&#10148;</span>
+          How long does Sonic Jump Revival take to be released?
+        </a>
+        <div id="answer13" class="answer" style="display: none;">
+          <p>
+            Sonic Jump Revival has begun development by late-January 2025 and has a fluid development cycle. Therefore, it took approximately 7 months for the Anniversary mod to be completed.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(14)" id="button14">
+          <span id="arrow14" style="rotate: 0deg;">&#10148;</span>
+          Can I play Sonic Jump Revival with a game controller?
+        </a>
+        <div id="answer14" class="answer" style="display: none;">
+          <p>
+            While <strong>Sonic Jump Revival</strong> have game controller support, the controls aren't set up correctly.
+            Because of this, it is not recommended to play the game with a game controller.
+          </p>
+          <p>
+            When playing on an emulator, you can actually use the arrow keys to play, but your controls are limited in this way.
+          </p>
+        </div><br>
+      </article>
+      <br id="gamemaps"><h2>About Game Maps</h2>
+      <article>
+        <a class="question" onclick="toggleText(20)" id="button20">
+          <span id="arrow20" style="rotate: 0deg;">&#10148;</span>
+          After using the Map Editor, the stage isn't turned into my own after saving. What is going on?
+        </a>
+        <div id="answer20" class="answer" style="display: none;">
+          <p>
+            The problem mostly comes from the <strong>CONFIG</strong> menu. If the stage name and graphics aren't changed, make sure to configure all settings before saving.
+          </p>
+          <p>
+            Sometimes, if the stage layout isn't changed despite modification before saving, it is possible that the game hasn't loaded the stage correctly. If so, go back to the <strong>Map Editor</strong>, load your map and save it again.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(21)" id="button21">
+          <span id="arrow21" style="rotate: 0deg;">&#10148;</span>
+          Why is there no music in my own stage?
+        </a>
+        <div id="answer21" class="answer" style="display: none;">
+          <p>
+            If you have selected a custom music and checked this option, the music takes time to load when playing the stage, because the custom music are stored in an external library.
+          </p>
+          <p>
+            If you have no music played during stages, <strong>you can bring the regular game soundtrack back by saving your map as a .bin file.</strong>
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(22)" id="button22">
+          <span id="arrow22" style="rotate: 0deg;">&#10148;</span>
+          I don't remember which file is my stored map and where to find it. What can I do?
+        </a>
+        <div id="answer22" class="answer" style="display: none;">
+          <p>
+            The map files are located in the <strong>SonicJump subfolder</strong>. This folder is most probably located in the <strong>&#x2913; DOWNLOAD</strong> folder of your internal device.
+          </p>
+          <p>
+            Also, <strong>because map files don't overwrite anytime you save</strong>, you might ended up with a lot of duplicated files.
+            But the file with the biggest number in ( ) has to be the most recent one.
+          </p>
+          <p>
+            You need to organize your files to avoid confusion. For better organization, make sure to store and backup your latest map file before starting making a new map.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(23)" id="button23">
+          <span id="arrow23" style="rotate: 0deg;">&#10148;</span>
+          My game map doesn't appear in the Online Stages page. What can I do?
+        </a>
+        <div id="answer23" class="answer" style="display: none;">
+          <p>
+            If the New Issue menu doesn't let you select labels, your issue won't be labeled as a custom map after saving in the repository and your issue won't be visible.
+          </p>
+          <p>
+            However, you can still find your issue by removing the Custom map label of the repository search bar.
+          </p>
+          <p>
+            If you want your issue to be labeled while you can't, try to contact <a href="https://github.com/gdgohan" target="_blank"><strong>GdGohan</strong></a> to inform him of the issue.
+          </p>
+        </div><br>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>

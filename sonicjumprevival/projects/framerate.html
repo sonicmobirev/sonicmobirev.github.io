@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Rate Increase - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg4.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top active"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <div>
+        <a href="../main/projects.html" class="button">&#8617; BACK</a>
+        <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
+        <a href="#works" onclick="closeNav()" class="button">How the game works</a>
+        <a href="#50fps" onclick="closeNav()" class="button">Running at 50fps</a>
+        <a href="#solution" onclick="closeNav()" class="button">The solution in theory</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color4">
+      <h1>Frame Rate Increase</h1>
+      <br id="intro"><h2>Introduction</h2>
+      <article>
+        <p>
+          The goal of this project is to make the Android port of Sonic Jump running at a higher frame rate. However, while this sounds simple, this task is actually too demanding to make it possible. This page explains how to make the game running smooth and why it is complicated.
+        </p>
+        <p>Also, if you have enough experience with Java/Smali programming and would like to give some help for this project, you can contact <strong>Furrican</strong> via the <a href="../support/contact.html"><strong>Contact</strong></a> page.</p>
+      </article>
+      <br id="works"><h2>How the game works</h2>
+      <article>
+        <p>
+          In the source code, search for "fps" in the <strong>Game_Draw</strong> file and you will stumble across a condition in the <strong>run()</strong> method.
+        </p>
+        <img class="center" src="img/project0.PNG">
+        <p>
+          In this condition, you can see that the fps equals 1000 divided by <strong>MIMIMUM_FRAME_TIME</strong>.
+          If you search for <strong>MIMIMUM_FRAME_TIME</strong>, you will find out that it equals 60L.
+          So according to the condition, the frame rate equals 1000 / 60 = 16.66666667.
+        </p>
+        <p>
+          Now we know that the game runs at 16.66666667fps.
+          While you might think that the game lags so much, <strong>the game is actually designed to run at this frame rate!</strong>
+        </p>
+      </article>
+      <br id="50fps"><h2>Running at 50fps</h2>
+      <article>
+        <p>
+          Since we now know how the game works, all you have to know now is changing the <strong>MIMIMUM_FRAME_TIME</strong> value to increase the frame rate.
+        </p>
+        <p>
+          Now let's make the game running at 50fps.
+          All you have to do is reduce the initial value of <strong>MIMIMUM_FRAME_TIME</strong> to 20L.
+          In this way, the fps value will be equal 1000 / 20 = 50.
+        </p>
+        <img class="center" src="img/project1.PNG">
+        <p>Once this value is changed, build the application using Sketchware Pro, and voila! Problem solved, right?</p>
+        <p><strong>WRONG! As it turns out, doing so makes the game run too fast! It runs 3 times faster than it supposed to be.</strong></p>
+      </article>
+      <br id="solution"><h2>The solution in theory</h2>
+      <article>
+        <p>
+          The question that is actually the right one to ask is this: <strong>How to make the game running smoother and at the right speed?</strong>
+        </p>
+        <p>
+          Well, here's a theory: Since the game is intentionally running at a low frame rate, <strong>we have to change all the values regarding speed, physics, gravity, time and animation frames by dividing or multiplying all those values by 3 or 4.</strong>
+          In this way, the game will run 3 or 4 times slower at 16.66666667fps, but it will run at normal speed at 50fps or above!
+        </p>
+        <p>
+          You might think that this is a good news, but the problem is that this is more complicated.
+          You see, <strong>tracking down every value regarding speed, physics, gravity, time and animation frames will take a lot of time, patience and understandings of the source code</strong>.
+        <hr>
+        <p>
+          Additionally, <strong>GdGohan</strong> has found a way to make the game run smoother on his side.
+          The way he did is by replacing the <strong>System.currentTimeMillis()</strong> function by <strong>System.nanoTime()</strong> and the <strong>fps / MIMIMUM_FRAME_TIME</strong> condition by a new method named <strong>fps()</strong>.
+        </p>
+        <img class="center" src="img/project2.PNG">
+        <p>
+          In this method, <strong>GdGohan</strong> has opted to a nanoTime system in an attempt to make the game run smoother.
+          And surprisingly, it works on his device! But it doesn't work on other devices, nor BlueStacks, as the game still runs too fast when this method is applied.
+        </p>
+        <hr>
+        <p>
+          With all that said, if you are an experimented Java programmer and have the patience, you can give some help for this project!
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
