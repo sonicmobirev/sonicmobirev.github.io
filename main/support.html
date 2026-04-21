@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Sonic Mobirev</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../styles/mobirev.css">
+    <script type="text/javascript" src="../scripts/mobirev.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg0.png');">
+    <header>
+      <span class="burgerleft" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <a href="../index.html"><img src="../img/mobirev_small.png"></a>
+      <span class="burgerright" id="rightBurger" onclick="rightNav()">&#9733;</span>
+    </header>
+    <nav class="navleft" id="myLeftNav">
+      <div>
+        <a href="updates.html" class="button">UPDATES</a>
+        <a href="../apps/index.html" class="button">ANDROID APPS</a>
+        <a href="../museum/index.html" class="button">MUSEUM</a>
+        <a href="gallery.html" class="button">GALLERY</a>
+        <a onclick="toggleNav()" id="button" class="button-active sub"><span id="arrow" style="rotate: 90deg;">&#10148;</span>SUPPORT</a>
+        <div class="submenu" id="menu">
+          <a href="#" onclick="toggleTab(event, 'started'), closeNav()" id="option0" class="button active smalltext">Getting Started</a>
+          <a href="#" onclick="toggleTab(event, 'apps'), closeNav()" id="option1" class="button smalltext">Download & Install Android Apps</a>
+          <a href="#" onclick="toggleTab(event, 'givinghelp'), closeNav()" id="option3" class="button smalltext">Help the project</a>
+          <a href="#" onclick="toggleTab(event, 'legal'), closeNav()" id="option4" class="button smalltext">Credits & Legal</a>
+          <a href="#" onclick="toggleTab(event, 'contact'), closeNav()" id="option5" class="button smalltext">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="navright featured" id="myRightNav">
+      <h2>FEATURED APPS</h2>
+      <div>
+        <img src="../apps/com.sonicmobirev.sonicadvance/img/logo1.png">
+        <a href="../apps/com.sonicmobirev.sonicadvance/index.html" class="button smalltext">Sonic Advance</a>
+      </div>
+      <div>
+        <img src="../apps/com.sonicmobirev.sonicjumprevival/img/logo1.png">
+        <a href="../apps/com.sonicmobirev.sonicjumprevival/index.html" class="button smalltext">Sonic Jump Revival</a>
+      </div>
+      <div>
+        <img src="../apps/com.sonicmobirev.happy_sonic/img/logo1.png">
+        <a href="../apps/com.sonicmobirev.happy_sonic/index.html" class="button smalltext">Happy Sonic! Live Wallpaper</a>
+      </div>
+      <div>
+        <img src="../apps/com.sega.sonicjumpfever/img/logo1.png">
+        <a href="../apps/com.sega.sonicjumpfever/index.html" class="button smalltext">Sonic Jump Fever</a>
+      </div>
+      <div>
+        <img src="../apps/com.sega.soniccdlite/img/logo1.png">
+        <a href="../apps/com.sega.soniccdlite/index.html" class="button smalltext">Sonic CD Lite</a>
+      </div>
+      <div>
+        <img src="../apps/com.sega.sonic4ep2lite/img/logo1.png">
+        <a href="../apps/com.sega.sonic4ep2lite/index.html" class="button smalltext">Sonic 4 Episode II Lite</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="bluegrad">
+      <article class="block">
+        <h1>Support</h1>
+        <div id="started" class="tab">
+          <h2>Getting Started with Sonic Mobirev</h2>
+          <p>Sonic Mobirev is a fan-made project with the objective of preserving old and abandoned mobile applications based on the Sonic the Hedgehog franchise.</p>
+          <p>
+            You can download Android applications and archived content.
+            You can also check the different mobile services and their games released throughout history.
+          </p>
+          <hr>
+          <h3>What we do</h3>
+          <p>
+            Our goals are the following:
+            <li>Preserve old and abandoned Sonic mobile applications (mostly Android and J2ME).</li>
+            <li>Give some Android applications quality of life improvements.</li>
+            <li>Make Android applications (and potentially J2ME applications) available to download.</li>
+            <li>Bring awareness to Sonic mobile applications (especially old Android ones) for better documentation.</li>
+          </p>
+          <hr>
+          <h3>What does "Mobirev" mean?</h3>
+          <p>
+            Mobirev is a blending of multiple words.
+            "Mobi" means "Mobile", whereas "rev" means "Revival", as the project was originally named "Sonic Mobile Revival".
+            But "rev" also means "Revolt" or "Revolution", in reference to the Android developer verification and Google's attempt at preventing anyone from installing Android apps outside of their Play Store.
+          </p>
+          <hr>
+          <h3>What's coming</h3>
+          <p>
+            This website is at its early years.
+            The Sonic Mobirev team is currently working on more projects for the website and the Android applications.
+          </p>
+          <p>If you want to give help and support for the Sonic Mobirev project and its mobile applications, check out what you can do in the <strong>Help the project</strong> page.</p>
+        </div>
+        <div id="apps" class="tab" style="display: none;">
+          <h2>Download apps</h2>
+          <p>
+            This website contains the Android applications via the <strong>ANDROID APPS</strong>, in which you can download different applications.
+            You can select an application page from the store or via the <strong>FEATURED APPS</strong> menu on the right sidebar.
+          </p>
+          <p>
+            In an application page, you can download the application, visit its website if one is present, and check numerous informations about the application via the tabs.
+            You can also download different versions of an application (either modded or original versions).
+          </p>
+          <p>If you want to download an application, press the <strong>DOWNLOAD APP</strong> or <strong>&#x2913; DOWNLOAD APP</strong> from the VERSIONS tab.</p>
+          <hr>
+          <h2>App installation</h2>
+          <p>
+            Once you have downloaded the application on your device, find the .apk file from the download folder and select it to proceed the installation.
+            Sometimes, when trying to install an application, you may encounter an "Unsafe app blocked" message. When this occurs, press "Install anyway" to proceed.
+          </p>
+          <div class="center">
+            <img src="../img/install.png">
+          </div>
+          <p>If the problem still persists, contact <strong>Furrican</strong> via the CONTACT tab.</p>
+          <hr>
+          <h2>Virus/Malware reports</h2>
+          <p>
+            If an application contains a malware according to your antivirus, it is most likely a false alarm.
+            When this occurs, you can ignore the reports and continue the installation.
+          </p>
+          <p>With that said, the Sonic Mobirev team is trying its best to mitigate as much malware as possible, even those who are harmless.</p>
+        </div>
+        <div id="givinghelp" class="tab" style="display: none;">
+          <h2>Giving Help to the project</h2>
+          <p>
+            You can give help and support the Sonic Mobirev team and project.
+            You can even being part of the team if you participate for the project.
+          </p>
+          <p>
+            To do so, you need to do one of the following tasks.
+          </p>
+          <hr>
+          <h3>Application modding</h3>
+          <p>Working on mods of mobile applications to give them quality of life improvements.</p>
+          <p>
+            You need different software tools. It's best to mod on PC for better visibility, but you can also mod on your Android device.
+          </p>
+          <p>
+            To decompile and/or modify an Android application, you need an APK editor software tool (like APK Easy Tool, APK Editor or MT Manager).
+            For the sprites, you can change them by using a drawing software tool (like Paint.net, IbisPaint or Paint Tool SAI).
+            And for more advanced modifications, APK editor tools can decompile the source code to Smali.
+            If you have the programming skills and knowledge, you can change the source code to implement additional functions and modifications.
+          </p>
+          <p>
+            Some applications like <strong>Sonic Advance Revival</strong> and <strong>Sonic Jump Revival</strong> has their source code decompiled for compatbility with Sketchware Pro.
+            This allows you to mod the application by using Java code, which is easier to program than Smali.
+            To find their source codes, check out their dedicated websites and go to the <strong>Projects</strong> menu.
+          </p>
+          <hr>
+          <h3>Application translation</h3>
+          <p>
+            Working on mods of mobile applications to give them any additional languages that are not originally available.
+            You can also retranslate languages from modded applications for better grammar accuracies.
+          </p>
+          <p>
+            In most cases, the text to translate are presented as sprites on sprite sheets, or located in text files.
+            Some text files (like .dat or .sla files) are more complicated to work on and can only be modified by using a hex editor.
+          </p>
+          <hr>
+          <h3>Application testing</h3>
+          <p>
+            This task is simple: test the mobile applications to find bugs and glitches.
+            If you encounter one, please contact <strong>Furrican</strong> via the Contact menu.
+          </p>
+          <hr>
+          <h3>Application preservation</h3>
+          <p>To help making a bigger library of applications, you can try to find builds of Sonic mobile applications and share them with the team or with the Keitai World community.</p>
+          <p>
+            If you can collect multiple versions of an application, make sure to sort the applications as much as possible to make a better collection.
+            If you have found a forgotten application, you can upload what you have found on the Internet Archive and/or contact the Sonic Mobirev team to inform about your discovery.
+          </p>
+          <hr>
+          <h3>Promotion</h3>
+          <p>
+            Bringing awareness to the Sonic Mobirev project and its mobile applications by promoting them.
+            You can share this website or make and upload a video online of this project and their applications.
+          </p>
+          <hr>
+          <h3>Web development</h3>
+          <p>
+            If you have great experience with web development, you can work on and update this website.
+            However, you need approval from <strong>Furrican</strong> to work on this task. Contact him via the Contact menu.
+          </p>
+          <hr>
+          <h3>Application publication</h3>
+          <p>
+            The Sonic Mobirev team lets you upload/publish modded applications.
+            If you want to upload your own mods on the ANDROID APPS, please contact <strong>Furrican</strong> via the Contact menu.
+          </p>
+          <p>
+            You can even take the modded applications (distributed by <strong>Furrican</strong>) from the ANDROID APPS and publish them anywhere online (except on Game Jolt and itch.io).
+            However, make sure to credit <strong>Furrican</strong> and <strong>GdGohan</strong> as the mod developers.
+          </p>
+        </div>
+        <div id="legal" class="tab" style="display: none;">
+          <h2>Credits</h2>
+          <p><strong>Website Version: 1.0.0</strong></p>
+          <p>Website created by <strong>Furrican</strong></p>
+          <hr>
+          <h2>Special Thanks</h2>
+          <p>
+            <strong>GdGohan</strong><br>
+            Modder of Sonic Advance, Sonic Jump Revival and Happy Sonic! Live Wallpaper
+          </p>
+          <p>
+            <strong>The Sonic Runners Revival Team</strong><br>
+            For the Sonic Runners Revival game approval to the website
+          </p>
+          <p>
+            <strong>Sonic Retro</strong>, <strong>SEGA Retro</strong> and <strong>Sonic Wiki Zone - Fandom</strong><br>
+            For reference sources
+          </p>
+          <p>
+            <strong>YuviApp</strong> and the <strong>Keitai World community</strong><br>
+            For DoJa game preservation
+          </p>
+          <p>
+            <strong>Mtbcooler</strong>, <strong>JKouga</strong>, <strong>SonicBlastYT</strong>, <strong>Star</strong>, <strong>Moonlight Sonic</strong> and <strong>JustMLC</strong><br>
+            Beta website testers
+          </p>
+          <p>
+            <strong>Selerinee</strong><br>
+            For website suggestion
+          </p>
+          <hr>
+          <h2>Legal Information</h2>
+          <p>
+            Sonic Mobirev is not affiliated with ©SEGA and/or ©SONICTEAM.<br>
+            For those involved in the Sonic Mobirev project and its mobile applications do not and/or should not claim ownership of any copyrighted and trademarked material that may appear on this website and in the mobile applications.
+          </p>
+          <p>
+            The Sonic Mobirev project is directed by <strong>Furrican</strong>, but does not claim ownership of this project as a copyrighted and/or trademarked work.
+          </p>
+          <p>
+            The Sonic Mobirev project and its related projects have no intent of profit off of copyrighted and/or trademarked material.<br>
+            Every content made for the Sonic Mobirev project should not be used for profit.
+          </p>
+          <p>
+            All mentions of copyright are listed in the footer of every page of this website.
+          </p>
+        </div>
+        <div id="contact" class="tab" style="display: none;">
+          <h2>Contact Furrican</h2>
+          <div class="featured center wrap">
+            <div>
+              <img src="../icons/telegram.png">
+              <a href="https://t.me/furrican" target="_blank" class="button" style="width: 100px;">Telegram</a>
+            </div>
+            <div>
+              <img src="../icons/discord.png">
+              <a href="https://discord.com/users/furrican" target="_blank" class="button" style="width: 100px;">Discord</a>
+            </div>
+            <div>
+              <img src="../icons/gamejolt.png">
+              <a href="https://gamejolt.com/@Furikan" target="_blank" class="button" style="width: 100px;">Game Jolt</a>
+            </div>
+            <div>
+              <img src="../icons/itchio.png">
+              <a href="https://furikan.itch.io" target="_blank" class="button" style="width: 100px;">itch.io</a>
+            </div>
+            <div>
+              <img src="../icons/carrdco.png">
+              <a href="https://furrican.carrd.co" target="_blank" class="button" style="width: 200px;">Furrican Homepage</a>
+            </div>
+          </div>
+          <div class="center furrican">
+            <img src="../img/furrican0.png">
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer class="bluegrad">
+      <br><hr>
+      <strong>
+        <p>Sonic Mobirev, 2026</p>
+        <p>Sonic Mobirev and its team are not affiliated with SEGA or any other companies involved in the present applications. We do not claim to own any copyrighted material that may appear in the applications or on this website, nor do we profit off of said material.</p>
+        <p>Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.</p>
+      </strong>
+    </footer>
+  </body>
+</html>
