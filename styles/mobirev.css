@@ -49,7 +49,7 @@ header{
   flex-direction: column;
   margin: auto;
 }
-header, header div, .burgerleft, .burgerright, .gallery a, .game, .navleft .button, .navleft .button-active, .center, .slides div{
+header, header div, .burgerleft, .burgerright, .gallery a, .game, .navleft .button, .navleft .button-active, .center, .slides div, .updates{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,6 +375,11 @@ ul{
 }
 .thumbnail{
   border-radius: 12px 12px 0 0;
+}
+.updates{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .wrap{
   flex-wrap: wrap;
