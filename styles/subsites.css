@@ -52,6 +52,7 @@ h1, h2, h3{
 h2{
   min-height: 50px;
   background-repeat: repeat-x;
+  margin-bottom: 16px;
 }
 header{
   overflow: hidden;
@@ -231,6 +232,9 @@ ul{
 }
 .navbutton a{
   width: 100%;
+}
+.new{
+  margin: 0 8px 0 8px;
 }
 .question{
   background-color: #10C6FF;
