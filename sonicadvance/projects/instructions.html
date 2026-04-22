@@ -42,37 +42,35 @@
       <h1>Modding Instructions</h1>
       <article>
         <p>Welcome to the <strong>Projects</strong> page!</p>
-        <p>If you give help to the Sonic Advance Mobirev project or want to work on your own mod, this page is for you!</p>
+        <p>If you want to give help to the Sonic Advance Mobirev project or want to work on your own mod, this page is for you!</p>
       </article>
       <br id="software"><h2>Software Tools</h2>
       <article>
+        <h3 class="title">Introduction</h3>
         <p>
-          <strong>INTRODUCTION:</strong><br>
           An Android application can be modded by using different software tools.
           It's best to work on PC for better visibility, but you can also work on your Android device.
         </p>
       </article>
       <article>
+        <h3 class="title">Necessary tools</h3>
         <p>
           <strong>PROGRAMMING TOOL:</strong><br>
           First, to work with the source code, .json and text files, you can use a programming tool (like Visual Studio Code or Notepad++).
-        </p>
-        <p>
           If you don't have a programming tool at your disposal, you can at least tweak the Java code directly in Sketchware Pro (check the <strong>Using Sketchware Pro</strong> section for more information).
         </p>
-      </article>
-      <article>
         <p>
-          <strong>DRAWING & APK DECOMPILING TOOL:</strong><br>
+          <strong>DRAWING TOOL:</strong><br>
           For the sprites, you can change them by using a drawing software tool (like Paint.net, IbisPaint or Paint Tool SAI).
         </p>
         <p>
+          <strong>APK DECOMPILING TOOL:</strong><br>
           Finally, you need an APK editor software tool (like APK Easy Tool, APK Editor or MT Manager) to decompile the .apk file after using Sketchware Pro.<br>
         </p>
       </article>
       <article>
+        <h3 class="title">File searching tool</h3>
         <p>
-          <strong>FILE SEARCHING:</strong><br>
           For file searching on Android, you need an application to access hidden folders, because Sketchware Pro has a hidden folder as ".sketchware".
           The most recommended application is ZArchiver, which allows you to access hidden folders.
         </p>
@@ -80,37 +78,33 @@
           If you can't access hidden folders on your Android folder, you need a special treatment for your device, either by rooting your phone, or by using Shizuku.
         </p>
       </article>
-      <br id="content"><h2>Game Content</h2>
+      <br id="sourcecode"><h2>Source Code</h2>
       <article>
+        <h3 class="title">Downloading the source code</h3>
         <p>
-          <strong>DOWNLOAD THE SOURCE CODE:</strong><br>
           To access the game content, you need to download the source code.
-          After downloading, you will find a <strong>.swb</strong> or <strong>.zip</strong> file in your download folder.
+          After downloading, you will find a <strong>.zip</strong> or a <strong>.swb</strong> file in your download folder.
         </p>
       </article>
       <article>
+        <h3 class="title">Extract/Create .swb file</h3>
         <p>
-          <strong>EXTRACT/CREATE .SWB FILE:</strong><br>
           You can extract a .swb file either by using an extractor program like 7-Zip, or by converting the .swb file into a .zip file.
           You can also create a .swb file by converting a .zip file into a .swb file.
           Make sure to select the "data" folder, "resources" folder and the "project" file to compress them in the .zip file.
         </p>
       </article>
       <article>
+        <h3 class="title">Inside the .swb file</h3>
         <p>
-          <strong>INSIDE THE .SWB FILE:</strong><br>
           Inside the .swb file are different folders and content.
           The "data" folder is where the game content is located, and the "resources" folder contains regular Sketchware content, though the only relevant content is the application icon.
         </p>
-      </article>
-      <article>
         <p>
           <strong>DATA FOLDER:</strong><br>
           In the "data" folder is 2 folders and files related to Sketchware Pro's functionalities.
           The "files" folder contains the game assets, Java code, application name and mipmap icons, whereas the "Injection" folder contains files related to the AndroidManifest.
         </p>
-      </article>
-      <article>
         <p>
           <strong>ANDROID MANIFEST & APKTOOL FILES:</strong><br>
           While Sketchware Pro is a great application for building .apk files, it has some issue such as:
@@ -127,14 +121,11 @@
       </article>
       <br id="sketchware"><h2>Using Sketchware Pro</h2>
       <article>
-        <br><img src="img/0.png" class="center">
+        <h3 class="title">Importing a project</h3>
+        <img src="img/0.png" class="center">
         <p>
-          <strong>LOAD PROJECT:</strong><br>
-          After creating your .swb file, you can build the game application by using Sketchware Pro.<br>
+          With the .swb file, you can build the game application by using Sketchware Pro.<br>
           In Sketchware Pro, select "Restore projects" and find your .swb file you have created.
-        </p>
-        <p>
-          If you are using BlueStacks, the .swb file may likely be located in "DCIM/SharedFolder/".
         </p>
         <img src="img/1.png" class="center">
         <p>
@@ -146,56 +137,58 @@
         </p>
       </article>
       <article>
-        <br><img src="img/2.png" class="center">
+        <h3 class="title">Settings</h3>
+        <img src="img/2.png" class="center">
         <p>
-          <strong>SETTINGS MENU:</strong><br>
           In the <strong>Settings</strong> menu, you change the application name, package name and version numbers.
         </p>
       </article>
       <article>
-        <br><img src="img/3.png" class="center">
+        <h3 class="title">Config</h3>
+        <img src="img/3.png" class="center">
         <p>
-          <strong>CONFIGURATION MENU:</strong><br>
-          The <strong>configuration</strong> menu is mostly used to change the SDK version number, though for modern Android compatibility purposes, it is recommend to keep the SDK versions as they are.
+          The <strong>Configuration</strong> menu is mostly used to change the SDK version number, though for modern Android compatibility purposes, it is recommend to keep the SDK versions as they are.
         </p>
       </article>
       <article>
-        <br><img src="img/4.png" class="center">
+        <h3 class="title">Back up</h3>
+        <img src="img/4.png" class="center">
         <p>
-          <strong>BACK UP:</strong><br>
-          The <strong>back up</strong> menu allows you to back up and save your project on your device.
+          The <strong>Back up</strong> menu allows you to back up and save your project on your device.
           The backed up project is located as a .swb file in ".sketchware/backups/<i>project name</i>".
         </p>
       </article>
       <article>
-        <br><img src="img/5.png" class="center">
+        <h3 class="title">Sign/Export</h3>
+        <img src="img/5.png" class="center">
         <p>
-          <strong>SIGN/EXPORT:</strong><br>
-          The <strong>export</strong> menu lets you sign the .apk file or export the source code for Android Studio.
+          The <strong>Sing/Export</strong> menu lets you sign the .apk file or export the source code for Android Studio.
           Once the exportation is done, the local path of the exportation is displayed.
         </p>
       </article>
       <article>
-        <br><img src="img/6.png" class="center">
+        <h3 class="title">Entering the project</h3>
+        <img src="img/6.png" class="center">
         <p>
-          <strong>ENTERING THE PROJECT:</strong><br>
           After entering the project, you will be granted will a vareity of creative options from Sketchware Pro.
         </p>
+      </article>
+      <article>
+        <h3 class="title">Application building</h3>
         <p>
-          <strong>APPLICATION BUILDING:</strong><br>
           You can build the application file by pressing "Run" on the bottom-right side of the screen.
           If the .apk building is complete, your device asks you if you want to install the application.
         </p>
         <p>
-          If the application cannot be built, an error pop-up is displayed.
+          If the application cannot be built, an error pop-up named "Show compile log" is displayed.
           You can check the compilation log to understand where the error comes from.
           Make sure that the code is well structured to proceed the application building.
         </p>
       </article>
       <article>
-        <br><img src="img/7.png" class="center">
+        <h3 class="title">Check the Java code</h3>
+        <img src="img/7.png" class="center">
         <p>
-          <strong>CHECK THE JAVA CODE:</strong><br>
           The benefit of using Sketchware Pro is the ability to build Android applications by using Java code, making game development easier than programming in bytecode (like Smali).
         </p>
         <p>
