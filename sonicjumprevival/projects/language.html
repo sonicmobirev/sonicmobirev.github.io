@@ -46,8 +46,8 @@
       </article>
       <br id="hexeditor"><h2>Hex Editor Settings</h2>
       <article>
+        <h3 class="title">Introduction</h3>
         <p>
-          <strong>INTRODUCTION:</strong><br>
           The language text are written in .dat files located in the <strong>res/raw</strong> folder. Each .dat file contain a different language.
         </p>
         <p>However, handling those files might be complicated for those who don't understand the logic behind them. Therefore, this section serves as a guide to explain how to handle these files.</p>
@@ -66,9 +66,9 @@
         </p>
       </article>
       <article>
-        <br><img src="img/hxd1.PNG" class="center">
+        <h3 class="title">.dat file basic structure</h3>
+        <img src="img/hxd1.PNG" class="center">
         <p>
-          <strong>.DAT FILE BASIC STRUCTURE:</strong><br>
           On the screenshots, you have recognized the text written in English. However, the text are actually in text slots that are seperated by dots or other characters.
         </p>
         <p>
@@ -92,9 +92,9 @@
       </article>
       <br id="datfiles"><h2>Handling the .dat files</h2>
        <article>
-        <br><img src="img/hxd2.PNG" class="center">
+        <h3 class="title">Number of text slots</h3>
+        <img src="img/hxd2.PNG" class="center">
         <p>
-          <strong>NUMBER OF TEXT SLOTS:</strong><br>
           And now, let's dive in the text. But first, let's talk about the first special character.
         </p>
         <p>
@@ -108,9 +108,9 @@
         </p>
       </article>
       <article>
-        <br><img src="img/hxd3.PNG" class="center">
+        <h3 class="title">Text slot length</h3>
+        <img src="img/hxd3.PNG" class="center">
         <p>
-          <strong>TEXT SLOT LENGTH:</strong><br>
           Next, let's talk about the "dots" separating each text.
         </p>
         <p>
@@ -145,8 +145,8 @@
         </p>
       </article>
       <article>
+        <h3 class="title">Specific dots</h3>
         <p>
-          <strong>SPECIFIC DOTS:</strong><br>
           Now, you are probably wondering, what the difference between the many dots on the text?<br>
           Well, the 8-bit values of each dot serve a purpose for the text. You can either make a line-break or an actual dot on the text.
         </p>
@@ -156,8 +156,8 @@
         </p>
       </article>
       <article>
+        <h3 class="title">Accents and foreign language characters</h3>
         <p>
-          <strong>ACCENTS AND FOREIGN LANGUAGE CHARACTERS:</strong><br>
           Next, let's talk about the accents and foreign language characters like the ones in Japanese or Chinese.<br>
           If you type those type of characters in the text, the game won't boot. This is because the game do not read those characters as text. Instead, you need to use the <strong>UTF-8 code point</strong> input to type those type of characters.
         </p>
