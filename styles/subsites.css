@@ -118,7 +118,7 @@ section{
 strong{
   text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, -1px 1px #000, 1px 1px #000, 1px -1px #000, -1px -1px #000;
 }
-ul{
+li{
   line-height: 1.7;
   margin-left: -10px;
 }
@@ -234,7 +234,7 @@ ul{
   width: 100%;
 }
 .new{
-  margin: 0 8px 0 8px;
+  margin: 0 10px;
 }
 .question{
   background-color: #10C6FF;
