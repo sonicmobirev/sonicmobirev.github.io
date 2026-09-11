@@ -50,7 +50,8 @@
             If you boot up the game for the first time, you will be granted with the <strong>All files access</strong> menu with a list of applications present on your device.
           </p>
           <p>
-            Search for <strong>Sonic Jump Revival</strong> and then enable <strong>Allow access to manage all files</strong>. If you have done it correctly, you can hear the intro jingle in the background.
+            Search for <strong>Sonic Jump Revival</strong> and then enable <strong>Allow access to manage all files</strong>.
+            If you have done it correctly, you can hear the intro jingle in the background.
           </p>
           <p>
             The files access permission is necessary for saving your game progress, options and map files.
@@ -58,15 +59,20 @@
         </div>
         <a class="question" onclick="toggleText(1)" id="button1">
           <span id="arrow1" style="rotate: 0deg;">&#10148;</span>
-          Why does the game have a terrible frame rate?
+          Why does the game run too slow?
         </a>
         <div id="answer1" class="answer" style="display: none;">
           <p>
-            The game is actually intended to run at such a low frame rate. This is not a glitch, nor a performance issue.<br>
-            This is something that could be potentially fixed in the future.
+            If the game runs at a low speed, it is due to your device not being powerful enough to run the game at a higher frame rate.
+            Also, the game lacks modern hardware optimizations and the more pixels the game draws on screen, the more the game might slowdown.
+            This problem especially occurs during <strong>Jungle Zone</strong>.
           </p>
+          <p>There are multiple ways of solving the slowdown:</p>
+          <p>A) Set the FPS option to 16.7 (keep in mind that you can't resume your stage progress during the pause menu).</p>
+          <p>B) If you play on a tablet, you can switch the screen orientation to landscape in order for your device to prevent drawing the game frame by frame.</p>
+          <p>C) If you can change the screen resolution of your device, set it at a lower screen resolution.</p>
           <p>
-            For more information, check out the <a href="../projects/framerate.html"><strong>Frame Rate Increase</strong></a> project page.
+            For more information, check out the <a href="../projects/framerate.html#flaws"><strong>Frame Rate Increase</strong></a> project page.
           </p>
         </div>
         <a class="question" onclick="toggleText(2)" id="button2">
@@ -105,19 +111,32 @@
       <article>
         <a class="question" onclick="toggleText(10)" id="button10">
           <span id="arrow10" style="rotate: 0deg;">&#10148;</span>
-          Is Sonic Jump Revival a fangame?
+          My game controller doesn't work. What can I do?
         </a>
         <div id="answer10" class="answer" style="display: none;">
+          <p>
+            If your game controller doesn't work, make sure that it is well connected.
+          </p>
+          <p>
+            Also, keep in mind that the gamepad and keyboard controls are not working correctly after entering the Map Editor or an Internet link.
+            Only the left stick, D-Pad and arrow keys are still functional.
+          </p>
+        </div>
+        <a class="question" onclick="toggleText(11)" id="button11">
+          <span id="arrow11" style="rotate: 0deg;">&#10148;</span>
+          Is Sonic Jump Revival a fangame?
+        </a>
+        <div id="answer11" class="answer" style="display: none;">
           <p>
             No. <strong>Sonic Jump Revival is actually a mod of an already existing Android port of Sonic Jump</strong>.<br>
             This Android port was released in 2011 via a service named <a href="https://segaretro.org/Puyo_Puyo!_Sega" target="_blank"><strong>Puyo Puyo! Sega</strong></a>. This service is provided by SEGA exclusively for Japanese mobile phones.
           </p>
         </div>
-        <a class="question" onclick="toggleText(11)" id="button11">
-          <span id="arrow11" style="rotate: 0deg;">&#10148;</span>
+        <a class="question" onclick="toggleText(12)" id="button12">
+          <span id="arrow12" style="rotate: 0deg;">&#10148;</span>
           Why are the music and sound effects different?
         </a>
-        <div id="answer11" class="answer" style="display: none;">
+        <div id="answer12" class="answer" style="display: none;">
           <p>
             The Android port of Sonic Jump has issues with some of its music and sound effects. Some .mid instruments sound too loud.
           </p>
@@ -126,40 +145,28 @@
             The game now contains .ogg files, instead of .mid.
           </p>
         </div>
-        <a class="question" onclick="toggleText(12)" id="button12">
-          <span id="arrow12" style="rotate: 0deg;">&#10148;</span>
-          Why is the game asking me to access data on my device?
-        </a>
-        <div id="answer12" class="answer" style="display: none;">
-          <p>
-            When booting Sonic Jump Revival for the first time, the game asks you for permission to access file data.<br>
-            If you allow permission, a folder named <strong>SonicJump</strong> will be created in the <strong>Android/media</strong> folder. The <strong>SonicJump</strong> folder is where your save file is located <strong>(sj_save.dat)</strong>.
-          </p>
-        </div>
         <a class="question" onclick="toggleText(13)" id="button13">
           <span id="arrow13" style="rotate: 0deg;">&#10148;</span>
-          How long does Sonic Jump Revival take to be released?
+          Why is the game asking me to access data on my device?
         </a>
         <div id="answer13" class="answer" style="display: none;">
           <p>
-            Sonic Jump Revival has begun development by November 2025 and has a fluid development cycle. Therefore, it took approximately 6 months for Sonic Jump Revival to be completed.
+            When booting Sonic Jump Revival for the first time, the game asks you for permission to access file data.
+            If you allow permission, folders will be created.
           </p>
           <p>
-            However, the game is currently in a beta state.
-            The final version will be released soon.
+            A folder named <strong>io.github.sonicmobirev.sonicjumprevival</strong> will be created in the <strong>Android/media</strong> folder.
+            And another folder named <strong>SonicJump</strong> will be created in the <strong>Documents</strong> folder.
+            The <strong>Documents/SonicJump</strong> directory is where your save file is located <strong>(sj_save.dat)</strong>.
           </p>
         </div>
         <a class="question" onclick="toggleText(14)" id="button14">
           <span id="arrow14" style="rotate: 0deg;">&#10148;</span>
-          Can I play Sonic Jump Revival with a game controller?
+          How long does Sonic Jump Revival take to be released?
         </a>
         <div id="answer14" class="answer" style="display: none;">
           <p>
-            While <strong>Sonic Jump Revival</strong> have game controller support, the controls aren't set up correctly.
-            Because of this, it is not recommended to play the game with a game controller.
-          </p>
-          <p>
-            When playing on an emulator, you can actually use the arrow keys to play, but your controls are limited in this way.
+            Sonic Jump Revival has begun development by November 2025 and has a fluid development cycle. Therefore, it took approximately 10 months for Sonic jump Revival to be completed.
           </p>
         </div><br>
       </article>
@@ -218,6 +225,18 @@
           </p>
           <p>
             If you want your issue to be labeled while you can't, try to contact <a href="https://github.com/gdgohan" target="_blank"><strong>GdGohan</strong></a> to inform him of the issue.
+          </p>
+        </div><a class="question" onclick="toggleText(24)" id="button24">
+          <span id="arrow24" style="rotate: 0deg;">&#10148;</span>
+          I try to download a custom map from the Online Stages page, but I can't go back to the game. What can I do?
+        </a>
+        <div id="answer24" class="answer" style="display: none;">
+          <p>
+            It seems like there is a problem with either the game code or the GitHub connectivity.
+            Unfortunately, we currently don't know for sure where the problem lies.
+          </p>
+          <p>
+            In the meantime, you can still download the custom maps outside of the game application and replace the <strong>decided_map.txt</strong> file from the game assets using the source code.
           </p>
         </div><br>
       </article>

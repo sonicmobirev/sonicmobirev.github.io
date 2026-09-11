@@ -37,21 +37,15 @@
       <h1>Updates</h1>
       <img class="center logo" src="../img/title_right.png"><br>
       <article>
-        <h3 class="title">Upload Date: 04/22/2026</h3>
-        <img class="center" src="../updates/img/mobirev.png">
+        <h3 class="title">Upload Date: 09/11/2026</h3>
+        <img class="center" src="../updates/img/v3.0.0.png">
         <p>
-          <strong><u>Version 3.0.0 (Beta) release:</u></strong><br>
-          <strong>Sonic Jump Anniversary</strong> has turned into <strong>Sonic Jump Revival</strong>!
+          <strong><u>Version 3.0.0 release:</u></strong><br>
+          The definitive v3.0.0 of <strong>Sonic Jump Revival</strong> is now released on Sonic Mobirev and the SAGE EXPO 2026!
         </p>
         <p>
-          The beta version of <strong>Sonic Jump Revival</strong> has been released alongside the <strong>Sonic Mobirev</strong> project to be part of the Sonic Mobirev series of Sonic Android apps.
-        </p>
-        <p>
-          This update introduces new features such as the Ukrainian language made by <strong>Alex Khayrullin</strong>, the original J2ME fonts, and Tails & Knuckles are now playable!
-        </p>
-        <p>
-          However, being a beta version, there are still updates on the way.
-          This version isn't the definitive version.
+          This major update gives new features and quality of life improvements!
+          The new features include a new playable character (Amy Rose), 33.3fps (with an option to toggle between 16.7fps and 33.3fps), multi-screen orientation, gamepad and keyboard support.
         </p>
         <div class="multimenus">
           <a href="../updates/previous.html">Previous Updates</a>
@@ -61,20 +55,71 @@
       <article>
         <p><strong>Please close the game application before installing the update.</strong></p>
         <div class="external">
-          <h3>&#x2913; v3.0.0 - Beta (04/22/2026)</h3>
+          <h3>&#x2913; v3.0.0 (09/11/2026)</h3>
           <a href="https://github.com/sonicmobirev/sonicmobirev.github.io/releases/download/sonicjumprevival/io.github.sonicmobirev.sonicjumprevival.apk">&#x2913; DOWNLOAD</a>
         </div>
       </article>
       <article>
         <h3 class="title">LIST OF MODIFICATIONS AND IMPROVEMENTS</h3>
         <p><strong><u>Potential:</u></strong><br>
+          - Add a new playable character and an ability section for playable characters.<br>
           - Make more in-game events.<br>
-          - Fix a performance bug in Jungle Zone while playing on certain Android devices.<strong>*</strong><br>
+          - Fix the slowdown issue when playing at higher frame rates.<strong>*</strong><br>
           - Add a fully-functional Multiplayer game mode.<strong>*</strong><br>
-          - Make the game run at 50fps or above and at normal speed.<strong>*</strong></p>
+          - Make the game run at 50fps and at normal speed.</p>
           <p><strong>*Help wanted</strong>. For more information, check out the <strong>Projects</strong> page.</p>
         </p>
         <hr>
+        <p><strong><u>v3.0.0:</u></strong><br>
+          - Fix the auto-language detection.<br>
+          - Fix the font style change when entering and exiting the EVENT INFORMATION menu.<br>
+          - Bring back the PLAY GAME option by making a new menu combining the STORY MODE, SPEEDRUN MODE and CHARATER SELECT menus.<br>
+          - Make a brand-new Character Select section with character portraits.<br>
+          - Make the playable characters (expect Sonic) unlockable over game progression.<br>
+          - Add Amy as a playable character.<br>
+          - Change the speed of Knuckles' Spiral Upper.<br>
+          - Add a modified version of the SECONDS REMAINING menu after selecting SPEEDRUN MODE.<br>
+          - Add a Mod Loader menu to load external mods to the game (locked behind the cheat code).<br>
+          - Make the names of the hidden features locked behind the cheat code cyan.<br>
+          - Replace the PuyoSega logo by the SAGE EXPO 2026 logo (for the SAGE 2026 edition).<br>
+          - Add the SAGE EXPO website link to the INTERNET menu (for the SAGE 2026 edition).<br>
+          - Prevent hidden features access from completing the game.<br>
+          - Remove the SPRITES option from the save/load data.<br>
+          - Make the SPRITES option in the GRAPHIC STYLES menu hidden behind the cheat code, due to certain characters lacking J2ME sprite variants.<br>
+          - Display the virtual pad during the GRAPHIC STYLES menu.<br>
+          - Update the tinyWrapped() method to improve the line breaks of cutscene and tutorial text.<br>
+          - Update the hugeprintJ2ME() method and add multiple props[] tables to improve the larger J2ME text.<br>
+          - Add a new "jumpTime" variable to fix some double jump animations.<br>
+          - Change Shadow's falling speed.<br>
+          - Keep Tails from descending slowly when using his Propeller Flight until he lands.<br>
+          - Change Tails attack conditions to prevent attacking enemies from below when descending with his Propeller Flight.<br>
+          - Add a quick descend command for Tails and Amy while performing the Super Jump ability.<br>
+          - Increase the loading screen frame rate to 50fps.<br>
+          - Change all values related to animation frames, speed and time to run at normal speed during 33.3fps.<br>
+          - Add a "fpsmode" variable to toggle all modified values for 16.7fps and 33.3fps.<br>
+          - Add an option to toggle the frame rate in both the Options and Pause menu.<br>
+          - Change Shadow's Double Jump physics.<br>
+          - Improve the Soundtrack Select Menu presentation during the Options menu and fix the soundtrack change when selecting one.<br>
+          - Prevent resuming gameplay when the fps is different from the other during the Pause menu.<br>
+          - Make the screen width compatible with aspect ratios lower than 16:9.<br>
+          - Add a new variable to change the touch input x-positions if the screen width is wider than 16:9.<br>
+          - Replace the portrait view by "screenSize" and "screenLayout" in the AndroidManifest for accessing screen orientation.<br>
+          - Add a screen orientation feature (portrait, landscape and reversed-landscape).<br>
+          - Remove some touch control limit to press the arrows or "select" icon outside of the game canvas.<br>
+          - Improve the tutorial text presentation and tinyprint text position.<br>
+          - Improve the game controller inputs.<br>
+          - Fix the controller inputs to prevent them from repeating despite being released.<br>
+          - Add a new "KEY_HELD" variable to prevent a button or a key to repeat the input while holding it (except for the directional keys and D-Pad).<br>
+          - Disable the gamepad and keyboard controls when accessing an Internet site or the Map Editor, due to control input issues.<br>
+          - Make the old cheat only available between the loading screen and the Main menu and make the BACK button act like a conventional back key.<br>
+          - Replace the "backPressCount" variable by the original cheat variables to activate the cheat.<br>
+          - Add new keyboard inputs.<br>
+          - Add new cheats using the keyboard (check out the <a href="../manual/cheatcode.html"><strong>Cheat Codes</strong></a> page for more information).<br>
+          - Replace the interrupt screen by the Pause menu while leaving the app or pressing the Start button during stages.<br>
+          - Bring back the unused softkey icons when using a gamepad or keyboard.<br>
+          - Add HELP and TUTORIAL text about keyboard controls when the gamepad or keyboard is used.<br>
+          - Separate the GAME WEBSITE and SONIC MOBIREV links into 2 options in the INTERNET menu.
+        </p>
         <p><strong><u>v3.0.0 (Beta):</u></strong><br>
           - Make the J2ME fonts set by default.<br>
           - Add a save data location to "Android/media".<br>
@@ -100,7 +145,7 @@
           - Add controller support (Not finished).
         </p>
         <p><strong><u>v2.2.0:</u></strong><br>
-          - Make a Russian version of the mod (made by Moonlight Sonic).<br>
+          - Make a Russian version of the mod (made by Moonneo).<br>
           - Increase the stringlist[] value from 50 to 64 to display 64 lines of text per string.
         </p>
         <p><strong><u>v2.1.0:</u></strong><br>
@@ -134,7 +179,7 @@
           - Rename the GAME WEBSITE option into INTERNET (GAME WEBSITE is available in this option).<br>
           - Add an ONLINE STAGES link in the INTERNET menu to play online stages built via the Map Editor.<br>
           - Increase the stage selection input width from 68/68/68 pixels to 75/80/75 pixels.<br>
-          - Add a cheat code to unlock all new unapproved content (check out the <a href="../manual/cheatcode.html"><strong>Cheat Code</strong></a> page for more information).<br>
+          - Add a cheat code to unlock all new unapproved content (check out the <a href="../manual/cheatcode.html"><strong>Cheat Codes</strong></a> page for more information).<br>
           - Add a Map Editor to save/load/play your own maps and listen to music.<br>
           - Add an option to change in-game sprites (Default/J2ME).<br>
           - Add an option to change font styles and make the J2ME font styles the default option for the SHC version of the game.<br>

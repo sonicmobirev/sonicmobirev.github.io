@@ -28,8 +28,8 @@
         <a href="../main/projects.html" class="button">&#8617; BACK</a>
         <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
         <a href="#works" onclick="closeNav()" class="button">How the game works</a>
-        <a href="#50fps" onclick="closeNav()" class="button">Running at 50fps</a>
-        <a href="#solution" onclick="closeNav()" class="button">The solution in theory</a>
+        <a href="#flaws" onclick="closeNav()" class="button">Design flaws</a>
+        <a href="#solutions" onclick="closeNav()" class="button">Possible solutions</a>
       </div>
     </nav>
     <section onclick="closeNav()" class="color4">
@@ -37,65 +37,193 @@
       <br id="intro"><h2>Introduction</h2>
       <article>
         <p>
-          The goal of this project is to make the Android port of Sonic Jump running at a higher frame rate. However, while this sounds simple, this task is actually too demanding to make it possible. This page explains how to make the game running smooth and why it is complicated.
+          The goal of this project is to improve the higher frame rate experience of the Sonic Jump's Android port by solving the different flaws that Sonic Jump Revival currently have.
+          Sonic Jump Revival introduces a higher frame rate (33.3fps) to make the game offering a smoother gameplay experience, but some players have reported slowdowns when playing the game at a higher frame rate.
         </p>
-        <p>Also, if you have enough experience with Java/Smali programming and would like to give some help for this project, you can contact <strong>Furrican</strong> via the <a href="../support/contact.html"><strong>Contact</strong></a> page.</p>
+        <p>This page explains how the frame rate increase has been implemented and the reasons for the differet flaws this feature has.</p>
+        <p>If you have enough experience with Java/Smali programming and would like to give some help for this project, you can contact <strong>Furrican</strong> via the <a href="../support/contact.html"><strong>Contact</strong></a> page.</p>
       </article>
       <br id="works"><h2>How the game works</h2>
       <article>
+        <h3 class="title">Before starting</h3>
+        <p>Before explaning how the higher frame rate is implemented, it is important to understand the context of this project.</p>
         <p>
-          In the source code, search for "fps" in the <strong>Game_Draw</strong> file and you will stumble across a condition in the <strong>run()</strong> method.
+          The Android port of Sonic Jump is designed to run exclusively at 16.7fps.
+          If we just increase the frame rate without any other modifications, the game will run too fast.
+          To make the frame rate increase project possible, more modifications, variables and conditions in the source code are added in order for the game to run smoothly while maintaining its accurate speed. 
         </p>
-        <img class="center" src="img/project0.PNG">
+        <p>In the source code, the important game functionality takes place in the <strong>Game_Draw</strong> file.</p>
+        <p>The 3 variables you need to know are <strong>MIMIMUM_FRAME_TIME</strong> (for the frame rate), <strong>fpsmode</strong> (for calculations based on the frame rate) and <strong>FlagVal</strong> (for animation frame delays).</p>
+      </article>
+      <article>
+        <h3 class="title">MIMIMUM_FRAME_TIME</h3>
         <p>
-          In this condition, you can see that the fps equals 1000 divided by <strong>MIMIMUM_FRAME_TIME</strong>.
-          If you search for <strong>MIMIMUM_FRAME_TIME</strong>, you will find out that it equals 60L.
-          So according to the condition, the frame rate equals 1000 / 60 = 16.66666667.
+          The <strong>MIMIMUM_FRAME_TIME</strong> variable is used in the <strong>run()</strong> method to determines the frame rate.
+          The frame rate is calculated in this way: 1000 / <strong>MIMIMUM_FRAME_TIME</strong>.
         </p>
         <p>
-          Now we know that the game runs at 16.66666667fps.
-          While you might think that the game lags so much, <strong>the game is actually designed to run at this frame rate!</strong>
+          For instance, when <strong>MIMIMUM_FRAME_TIME</strong> equals 30L, this means 1000 / 30 = 33.3333333fps.
+        </p>
+        <img src="img/framerate0.PNG" class="center">
+        <p>
+          In the <strong>run()</strong> method, there are conditions where <strong>MIMIMUM_FRAME_TIME</strong> is set to a number.
+          During the loading screen, the game runs at 50fps.
+          Outside of that, the game either runs at 33.3fps or 16.7fps depending on if <strong>fpsmode</strong> is equal 2 or 1 respectively.
         </p>
       </article>
-      <br id="50fps"><h2>Running at 50fps</h2>
       <article>
+        <h3 class="title">fpsmode</h3>
         <p>
-          Since we now know how the game works, all you have to know now is changing the <strong>MIMIMUM_FRAME_TIME</strong> value to increase the frame rate.
+          The <strong>fpsmode</strong> variable affects other variables and calculations (from character speed, animations, timers, and more...) for the game speed to match the frame rate.
+          This variable is used throughout the code of the <strong>Game_Draw</strong> file.
         </p>
+        <img src="img/framerate1.PNG" class="center">
         <p>
-          Now let's make the game running at 50fps.
-          All you have to do is reduce the initial value of <strong>MIMIMUM_FRAME_TIME</strong> to 20L.
-          In this way, the fps value will be equal 1000 / 20 = 50.
+          For example, this image above shows the code where the game menus appear with sliding animations.
+          As you can see, the <strong>fpsmode</strong> variable is added into the calculations so the game menus move at the same speed despite the frame rate differences.
         </p>
-        <img class="center" src="img/project1.PNG">
-        <p>Once this value is changed, build the application using Sketchware Pro, and voila! Problem solved, right?</p>
-        <p><strong>WRONG! As it turns out, doing so makes the game run too fast! It runs 3 times faster than it supposed to be.</strong></p>
       </article>
-      <br id="solution"><h2>The solution in theory</h2>
       <article>
+        <h3 class="title">FlagVal</h3>
         <p>
-          The question that is actually the right one to ask is this: <strong>How to make the game running smoother and at the right speed?</strong>
+          The <strong>FlagVal</strong> variable is used to animate certain graphics to blink or change sprites once every number of frames.
+          In the source code of Sonic Jump Revival, the <strong>FlagVal</strong> variable is also used to delay animation frames to prevent them from being animated too fast if the game runs at 33.3fps.
         </p>
         <p>
-          Well, here's a theory: Since the game is intentionally running at a low frame rate, <strong>we have to change all the values regarding speed, physics, gravity, time and animation frames by dividing or multiplying all those values by 3 or 4.</strong>
-          In this way, the game will run 3 or 4 times slower at 16.66666667fps, but it will run at normal speed at 50fps or above!
+          In all conditions, the <strong>FlagVal</strong> variable is accompanied with the <strong>fpsmode</strong> variable in order for the animation frames to match the game speed based on the frame rate.
+        </p>
+        <img src="img/framerate2.PNG" class="center">
+        <p>
+          Let's take the ring animation used during menus for example.
+          As you can see, a condition featuring the <strong>FlagVal</strong> and <strong>fpsmode</strong> variables is used to animate the ring sprite once every number of frames.
+          The number of frames is determined by a calculation with the <strong>fpsmode</strong> value.
         </p>
         <p>
-          You might think that this is a good news, but the problem is that this is more complicated.
-          You see, <strong>tracking down every value regarding speed, physics, gravity, time and animation frames will take a lot of time, patience and understandings of the source code</strong>.
-        <hr>
-        <p>
-          Additionally, <strong>GdGohan</strong> has found a way to make the game run smoother on his side.
-          The way he did is by replacing the <strong>System.currentTimeMillis()</strong> function by <strong>System.nanoTime()</strong> and the <strong>fps / MIMIMUM_FRAME_TIME</strong> condition by a new method named <strong>fps()</strong>.
+          In this example, if <strong>fpsmode</strong> equals 2 (33.3fps), then this condition means that the ring sprite animates once every 2 frames at 33.3fps.
+          This condition allows for the ring animation to behave exactly like in 16.7fps, where the ring sprite animates once every 1 frame at 16.7fps.
         </p>
-        <img class="center" src="img/project2.PNG">
+      </article>
+      <br id="flaws"><h2>Design flaws</h2>
+      <article>
+        <h3 class="title">Movable object placements</h3>
         <p>
-          In this method, <strong>GdGohan</strong> has opted to a nanoTime system in an attempt to make the game run smoother.
-          And surprisingly, it works on his device! But it doesn't work on other devices, nor BlueStacks, as the game still runs too fast when this method is applied.
+          The first flaw is a frame rate compatibility issue related to the movable object placements (moving platforms and badniks).
         </p>
-        <hr>
+        <img src="img/framerate3.png" class="center">
         <p>
-          With all that said, if you are an experimented Java programmer and have the patience, you can give some help for this project!
+          If you change the <strong>FPS</strong> option from the pause menu, you may notice that the <strong>RESUME</strong> option is disabled and is highlighted in <span style="color: red;">red</span>.
+          The reason for this is due to the enemy placements being determined by the <strong>fpsmode</strong> variable.
+        </p>
+        <p>
+          Basically, if you change the frame rate during the pause menu, the movable object placements are altered.
+        </p>
+        <p>
+          Instead of making the movable objects move at a traveled distance frame by frame, the <strong>fpsmode</strong> variable determines the onscreen position and the maximum distance those objects can travel until turning around.
+        </p>
+        <p>
+          Both the <strong>ScaleBlit()</strong> and the <strong>CentreScaleBlit()</strong> methods determine the position of those movable objects.
+          They contain the <strong>fpsmode</strong> variable to add to the multiplcation of the onscreen object placements.
+        </p>
+        <img src="img/framerate4.PNG" class="center">
+        <p>
+          And to determine the farthest distance of the movable objects, the <strong>fpsmode</strong> variable is used so the objects have to move twice as far when playing at 33.3fps. 
+        </p>
+        <p>
+          The compensation the game currently has is a variable named <strong>ResumeAvailable</strong>.
+          This variable prevents players from resuming the stage when switching to the other frame rate.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Boss chains and spike obstacles</h3>
+        <p>
+          Another frame rate compatibility issue is with the bosses.
+        </p>
+        <img src="img/framerate5.gif" class="center">
+        <p>
+          You see, while the Eggman machines move smoothly at 33.3fps, the chains and spike obstacles do not.
+          The reason for this is due to how complicated it is to calculate the positions and movement speed of those objects.
+        </p>
+        <p>
+          The chains and spike obstacles logic are located in the <strong>rotatechain()</strong> method and the <strong>ENEMY_BOSS</strong> case of the <strong>ProcessGame()</strong> method.
+          The <strong>rotatechain()</strong> method is where the chains and spike obstacles positions are calculated, whereas the <strong>ENEMY_BOSS</strong> case makes those objects move based on the animation logic.
+        </p>
+        <p>
+          To compensate, conditions featuring the <strong>FlagVal</strong> and <strong>fpsmode</strong> variables are used to make the chains and spike obstacles move once every 2 frames when playing at 33.3fps.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Slowdowns</h3>
+        <p>
+          The biggest issue that frame rate increase brings up are the slowdowns.
+          After experimenting with higher frame rate gameplay, the issue of slowdowns has been discovered when testing the game at 33.3fps.
+          This slowdown problem is especially noticable during <strong>Jungle Zone</strong>.
+        </p>
+        <p>
+          At first, it is simply thought that the devices of certain players are not powerful enough to run the game at a higher frame rate.
+          But what is interesting is that, thanks to the multi-screen orientation feature, the slowdown is less noticable if you play the game on landscape view.
+        </p>
+        <p>
+          As it turns out, one key factor of the slowdown to occur are the graphics.
+          You see, older mobile games lack modern hardware optimizations and are not compiled with modern multi-threaded rendering in mind.
+          The CPU gets overwhelmed trying to draw millions of pixels on screen frame by frame based on your screen resolution, even though the game canvas only needs a resolution of 360x640 pixels.
+        </p>
+        <p>
+          Because of this, rendering so many frames so many times than the intended frame rate may cause the device to run at its maximum capacity.
+          This also may cause the device to quickly heat up, trigerring thermal throttling and quick battery draining.
+        </p>
+        <p>
+          The underlying physics and gameplay loop require 60 internal computing cycles per second (hence why the <strong>MIMIMUM_FRAME_TIME</strong> variable was 60L by default) to advance time normally.
+          But because of the software rendering issue, the CPU can still only calculate approximately 16 updates per second.
+        </p>
+        <p>
+          Let's say you want the game to run at 60fps.
+          If you force the display output to a smooth 60fps but limit the execution speed, the game engine spaces out those 16.7 frames over a full 60-frame timeline.
+          The game looks incredibly smooth because there is no stuttering, but everything moves in slow motion.
+          The time literally slows down by a huge percentage because the game takes nearly 4 seconds of real time to calculate one second of in-game time.
+        </p>
+      </article>
+      <br id="solutions"><h2>Possible solutions</h2>
+      <article>
+        <h3 class="title">To sum up</h3>
+        <p>
+          Before getting into the possible solutions, here is a small rundown of what issues to resolve for this project:
+        </p>
+        <ul>
+          <li type="1">Movable object placements and movement speed being determined by the <strong>fpsmode</strong> variable, making frame rate compatibility issues.</li>
+          <li type="1">Boss chains and spike obstacles moving once every 2 frames when playing at 33.3fps, due to complications regarding their positions and movement speed.</li>
+          <li type="1">Slowdowns occuring when playing on weaker hardware or higher screen resolution (especially during <strong>Jungle Zone</strong>).</li>
+        </ul>
+      </article>
+      <article>
+        <h3 class="title">Fixing the frame rate compatibility issues</h3>
+        <p>
+          For the movable object placements, the <strong>var10002 = var7[var2]++;</strong> and <strong>var10002 = var7[var2]--;</strong> lines should be replaced so the <strong>fpsmode</strong> variable should determine the traveled distance frame by frame.
+          The problem is that the other variables (var10002, var7, var2, etc...) don't have the same data type.
+          Therefore, it is more complicated to change those pieces of code.
+        </p>
+        <p>
+          Whereas the boss chains and spike obstacles, it is possible to improve their movement speed by better understanding the logic behind the <strong>rotatechain()</strong> method and the <strong>ENEMY_BOSS</strong> case of the <strong>ProcessGame()</strong> method.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Getting rid the slowdowns</h3>
+        <p>
+          The slowdowns are the most important issue to be resolved.
+          There are a few theories on how to get rid of the slowdowns.
+        </p>
+        <p>
+          Since we know that the slowdowns occur primarily due to the game being drawn on screen frame by frame, we have to make the graphics so it doesn't cost too much performance.
+          Either the screen resolution of the device has to be modified when opening the game application, or the game has to be optimized by implementing a graphics API.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Conclusion</h3>
+        <p>
+          The frame rate increasing is a great project, but it is not without flaws.
+          The discovery of the slowdowns when playing on higher frame rates than intended was interesting to better understand how old mobile games were designed.
+        </p>
+        <p>
+          With all that said, if you are an experimented Java programmer and have the patience, you can give some help to improve this project!
         </p>
       </article>
     </section>
