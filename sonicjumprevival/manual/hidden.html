@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden features - Sonic Jump Revival</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../styles/subsites.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" src="../../scripts/subsites.js"></script>
+  </head>
+  <body style="background-image: url('../bg/bg6.gif');">
+    <header>
+      <span class="burger2" id="leftBurger" onclick="leftNav()">&#9776;</span>
+      <div>
+        <a href="../main/updates.html" class="header-top"><span>Updates</span></a>
+        <a href="../main/projects.html" class="header-top"><span>Projects</span></a>
+        <a href="../main/onlinestages.html" class="header-top"><span>Online Stages</span></a>
+      </div>
+      <div>
+        <a href="../main/manual.html" class="header-bottom active"><span>Game Manual</span></a>
+        <a href="../main/museum.html" class="header-bottom"><span>Museum</span></a>
+        <a href="../main/support.html" class="header-bottom"><span>Support</span></a>
+      </div>
+      <a href="../../main/updates.html" class="mobirev" target="_blank"><img src="../../img/mobirev_link.png"></a>
+    </header>
+    <nav id="myLeftNav" class="anchor">
+      <div>
+        <a href="../main/manual.html" class="button">&#8617; BACK</a>
+        <a href="#introduction" onclick="closeNav()" class="button">Introduction</a>
+        <a href="#multiplayer" onclick="closeNav()" class="button">Multiplayer Mode</a>
+        <a href="#modloader" onclick="closeNav()" class="button">Mod Loader</a>
+        <a href="#shadow" onclick="closeNav()" class="button">Shadow Story</a>
+        <a href="#sprites" onclick="closeNav()" class="button">J2ME sprites</a>
+      </div>
+    </nav>
+    <section onclick="closeNav()" class="color6">
+      <h1>Hidden Features</h1>
+      <br id="introduction"><h2>Introduction</h2>
+      <article>
+        <p>
+          Sonic Jump Revival contains hidden features that can only be accessible via the main cheat.
+          After using the main cheat, additional options highlighted in <span style="color: cyan;">cyan</span> are available in certain menus.
+          This page explains all the hidden features and why they are hidden.
+        </p>
+        <p>
+          To use the main cheat, check the <strong>Cheat Codes</strong> menu for more information.
+        </p>
+      </article>
+      <br id="multiplayer"><h2>Multiplayer Mode</h2>
+      <article>
+        <h3 class="title">Description</h3>
+        <p>
+          The Multiplayer Mode is a game mode where 2 players are playing together for casual or competitive purposes.
+        </p>
+        <p>
+          One player is playing as Sonic, whereas the other player is playing as Shadow. In Multiplayer Mode, Shadow has the same physics as Sonic so both players has the same advantages.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">How to start Multiplayer Mode</h3>
+        <p>
+          The Multiplayer Mode functions via local connection. Make sure that both player's device are connected to the same Wi-fi.
+        </p>
+        <img src="img/hidden0.png" class="center">
+        <p>
+          After activating the cheat, select <strong>MULTIPLAYER</strong> in the Main Menu and a window appears.<br>
+          Select your device IP to continue.
+        </p>
+        <img src="img/hidden1.png" class="center">
+        <p>
+          Next, the game asks if you want to be the receiver or the client.
+          If you want to be the client, select <strong>CLIENT</strong> and insert the other player's device IP.
+          If you want to be the receiver, select <strong>SERVER</strong> and wait for the other player to insert you device IP.
+        </p>
+        <img src="../projects/img/multi0.png" class="center">
+        <p>
+          Finally, once done correctly, select a game mode and the other player's screen will appear on the top-left corner of your screen.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Why is it hidden?</h3>
+        <p>
+          The Multiplayer Mode was originally going to be one of the new features highlighted in Sonic Jump Anniversary (v2.0.0), but it was decided to make it hidden as a secret feature, due to the problematic structure of the multiplayer screens.
+        </p>
+        <p>
+          If you want to work on this project, check out the <a href="../projects/multiplayer.html"><strong>Multiplayer Mode</strong></a> project.
+        </p>
+      </article>
+      <br id="modloader"><h2>Mod Loader</h2>
+      <article>
+        <h3 class="title">Description</h3>
+        <img src="img/hidden2.png" class="center">
+        <p>
+          The Mod Loader is a feature that allows players to load their mods directly into the game.
+          Once a mod is selected, the game restarts with the modified codes of the mod.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">How to use the Mod Loader</h3>
+        <p>
+          First, you need a <strong>config.ini</strong> file and a <strong>config</strong> folder containing your modified Java files from the game's source code.
+          Then, put both the .ini file and folder in another folder with the name of your choice and put this folder in a .zip file.
+        </p>
+        <p>
+          After the .zip file is made, put it in the <strong>Android/media /io.github.sonicmobirev.sonicjumprevival /SonicJump/mods</strong> directory.
+        </p>
+        <p>
+          Once done correctly, you can find the name of your .zip file in the Mod Loader.
+          Select it and press DONE.
+          The game will restart with the modified codes of your mod.
+        </p>
+        <img src="img/hidden3.png" class="center">
+        <p>As a sidenote, after trying to use your mod from the Mod Loader, more files are created in the "mods" folder and can be seen in the Mod Loader.</p>
+      </article>
+      <article>
+        <h3 class="title">Why is it hidden?</h3>
+        <p>
+          The Mod Loader is an idea made by <strong>GdGohan</strong>.
+          While this idea is interesting, is it very complicated to make it work correctly.
+        </p>
+        <p>
+          The Mod Loader was originally planned to be on the spotlight with the other new additions of Sonic Jump Revival.
+          But because it doesn't work, it was decided to make it hidden as a secret feature.
+        </p>
+        <p>
+          If the Mod Loader will work correctly one day, it will be accessible without the need of the main cheat.
+        </p>
+      </article>
+      <br id="shadow"><h2>Shadow Story</h2>
+      <article>
+        <h3 class="title">Description</h3>
+        <img src="img/hidden4.png" class="center">
+        <p>
+          In the <strong>PLAY GAME</strong> menu is a hidden game mode named <strong>SHADOW STORY</strong>.
+          This mode lets you play the game with a new story and different stage environments.
+        </p>
+        <p>
+          <strong>To better experience this game mode, make sure to select SHADOW before entering the SHADOW STORY mode.</strong>
+        </p>
+      </article>
+      <article>
+        <h3 class="title">New cutscene</h3>
+        <img src="img/hidden5.png" class="center">
+        <p>
+          If you play the <strong>SHADOW STORY</strong> mode as Shadow, the first stage grants you with a brand-new cutscene inspired by the story from Sonic X Shadow Generations.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">"COLONY ARK" ZONE</h3>
+        <img src="img/hidden6.png" class="center">
+        <p>
+          Additionally, Green Hill Zone Act 1 will have a different stage environment resembling Colony ARK.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Why is it hidden?</h3>
+        <p>
+          The reason for this game mode being hidden is because it is currently unfinished.
+          Only the first stage has differences between the main game and <strong>SHADOW STORY</strong> mode.
+          And even then, the level layout is the same.
+        </p>
+        <p>
+          The <strong>SHADOW STORY</strong> mode is an idea made by <strong>GdGohan</strong>.
+          If he decides to keep working on this project, maybe this story will available from the start.
+          However, this project isn't a big priority at the moment.
+        </p>
+      </article>
+      <br id="sprites"><h2>J2ME sprites</h2>
+      <article>
+        <h3 class="title">Description</h3>
+        <img src="img/hidden7.png" class="center">
+        <p>
+          In the <strong>GRAPHIC STYLES</strong> menu is a hidden option named <strong>SPRITES</strong>.
+          You can choose between <strong>DEFAULT</strong> and <strong>J2ME</strong>.
+        </p>
+        <img src="img/hidden8.png" class="center">
+        <p>
+          If you choose the <strong>J2ME</strong> sprites, some sprites will look more like the ones from the AirPlay version of Sonic Jump running on 240x320 cellphones.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Why is it hidden?</h3>
+        <p>
+          This option was originally designed only for Sonic and Shadow and was an already available option in Sonic Jump Anniversary (v2.0.0).
+        </p>
+        <p>
+          However, when new playable characters were added, it is more complicated to implement new character sprites outside of the original sprite sheet (originally used only for Sonic).
+          Because Sonic Jump Revival uses a new method of invoking character sprites, this creates compatibility issues.
+        </p>
+        <p>
+          Also, not all sprites are affected by the sprite change, so this feature is unfinished.
+        </p>
+        <p>
+          Because of those reasons, it was decided to make it hidden as a secret option.
+        </p>
+      </article>
+    </section>
+    <footer>
+      <br><hr>
+      <p>
+        <strong>
+          Original game ©SEGA CORPORATION.<br>
+          ©AIRPLAY/SEGA CORPORATION, 2005, 2007, 2011. All rights reserved.<br>
+          SONIC JUMP, Sonic the Hedgehog and all related characters are registered trademarks of SEGA CORPORATION.
+        </strong>
+      </p>
+      <div></div>
+    </footer>
+  </body>
+</html>
