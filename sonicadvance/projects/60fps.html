@@ -38,6 +38,7 @@
       <a href="#60fps" onclick="closeNav()" class="button">How to make the game run at 60fps?</a>
       <a href="#goingon" onclick="closeNav()" class="button">What is going on?</a>
       <a href="#solution" onclick="closeNav()" class="button">The solution in theory</a>
+      <a href="#update" onclick="closeNav()" class="button">Update<img src="../../img/new.gif" class="new"></a>
     </nav>
     <section onclick="closeNav()" class="color3">
       <h1>Project 60fps</h1>
@@ -54,7 +55,7 @@
         <p>
           Also, if you have enough experience with Java programming and would like to give some help for this project, you can contact me via the <a href="../support/contact.html"><strong>Contact</strong></a> page.
         </p>
-        <img class="center furrican" src="../img/furrican1.png">
+        <img class="center furrican" src="../../img/furrican1.png">
       </article>
       <br id="60fps"><h2>How to make the game run at 60fps?</h2>
       <article>
@@ -71,8 +72,7 @@
         <p>Before talking about the solution, I would like to explain what is going on in the game.</p>
         <p>
           First of all, we all know that the Android port of Sonic Advance has a problematic frame rate.
-          The original version of the Android port initally runs at <strong>12.5fps</strong>.
-          But the Mobirev mod makes the game run at <strong>15fps</strong>.
+          The Android port runs at <strong>15fps</strong>.
           While you might think that the game lags so much, <strong>the game is actually designed to run at 15fps!</strong></p>
         <p>Here's the proof that the game is intended to run at this frame rate:</p>
         <img class="center" src="img/options1.gif">
@@ -110,7 +110,78 @@
           <strong>Tracking down every values regarding speed, physics, gravity, time and animation frames will take a lot of time, patience and understandings of the source code.</strong>
           Not to mention a few glitches to take into consideration, such as the opening animation not working properly at one point.
         </p>
-        <hr>
+      </article>
+      <br id="update"><h2><img src="../../img/new-ezgif.com-resize.gif" class="new">Update<img src="../../img/new-ezgif.com-resize.gif" class="new"></h2>
+      <article>
+        <h3 class="title">Gdpro's mod</h3>
+        <p>
+          On August 15th 2026, I have received a message from a Telegram user named <strong>Gdpro</strong> (not to be confused with <strong>GdGohan</strong>).
+          He sent me the source code of Sonic Advance with his modifications in it.
+          After installing the application from this .swb file, I realized that the game runs at 60fps while maintaining its normal speed (for the most part).
+        </p>
+        <p>
+          I was so amazed about this result, but I pointed out some flaws that needed to be fixed, so I asked <strong>Gdpro</strong> to fix some issues.
+          And after a few updates, he uploaded his mod in GameBanana (link down-below).
+        </p>
+        <div class="external">
+          <h3>External Link</h3>
+          <a href="https://gamebanana.com/mods/704424" target="_blank">60 fps Mod for Sonic Advance (Mobile) - GameBanana</a>
+        </div>
+      </article>
+      <article>
+        <h3 class="title">Leftovers</h3>
+        <p>
+          While this sounds like great news, the 60fps project is far from being finished for multiple reasons.
+        </p>
+        <img class="center" src="img/project3.gif">
+        <p>
+          First of all, some animations like the ones in the Character Select menu are embedded in .json files instead of the source code.
+          Because of this, it is very difficult to adjust the speed of those animations.
+          A possible  solution would be to convert the .json embedded animation frames into the source code to make the modifications easier.
+        </p>
+        <p>
+          Secondly, <strong>Gdpro</strong> hasn't done fixing everything for the mod to be perfect.
+          There are a lot of leftovers such as glitches and oversights that might be too difficult to overcome.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Slowdowns</h3>
+        <p>
+          But the biggest issue that frame rate increase brings up are the slowdowns.
+          After experimenting with higher frame rate gameplay, the issue of slowdowns has been discovered when testing the game at 60fps.
+          Even some of the most performant mobile devices cannot mitigate slowdowns easily.
+        </p>
+        <p>
+          As it turns out, one key factor of the slowdown to occur are the graphics.
+          You see, older mobile games lack modern hardware optimizations and are not compiled with modern multi-threaded rendering in mind.
+          The CPU gets overwhelmed trying to draw millions of pixels on screen frame by frame based on your screen resolution, even though the game canvas only needs a small pixel resolution.
+        </p>
+        <p>
+          Because of this, rendering so many frames so many times than the intended frame rate may cause the device to run at its maximum capacity.
+          This also may cause the device to quickly heat up, trigerring thermal throttling and quick battery draining.
+        </p>
+        <p>
+          The underlying physics and gameplay loop require 60 internal computing cycles per second to advance time normally.
+          But because of the software rendering issue, the CPU can still only calculate approximately 15 updates per second.
+        </p>
+        <p>
+          If you force the display output to a smooth 60fps but limit the execution speed, the game engine spaces out those 15 frames over a full 60-frame timeline.
+          The game looks incredibly smooth because there is no stuttering, but everything moves in slow motion.
+          The time literally slows down by a huge percentage because the game takes nearly 4 seconds of real time to calculate one second of in-game time.
+        </p>
+        <p>
+          There are a few theories on how to get rid of the slowdowns.
+          Since we know that the slowdowns occur primarily due to the game being drawn on screen frame by frame, we have to make the graphics so it doesn't cost too much performance.
+          Either the screen resolution of the device has to be modified when opening the game application, or the game has to be optimized by implementing a graphics API.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Conclusion</h3>
+        <p>
+          The Project 60fps of the Sonic Advance's Android port is far from being finished, but it is possible.
+          However, it is still a very complicated project to make it completed.
+          The discovery of the slowdowns when playing on higher frame rates than intended was interesting to better understand how old mobile games were designed.
+        </p>
         <p>
           With all that said, <strong>I need help from experimented Java programmers to complete this project.</strong>
           The frame rate is by far the most complained issue about the Android port of Sonic Advance.
