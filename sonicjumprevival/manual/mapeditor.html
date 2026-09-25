@@ -66,10 +66,6 @@
           If you want to get a higher view of the canvas, you can hide the menu section by pressing the <strong>&#9776;</strong> icon.
           Press this icon again to display the menu section back.
         </p>
-        <p>
-          The black/colored box on the top-right side of the screen is actually an option.
-          It allows you to change the color of the stage canvas.
-        </p>
       </article>
       <article>
         <h3 class="title">Option types</h3>
@@ -79,9 +75,18 @@
         <p>
           Here are the sections listing the options:<br>
           <ul>
-            <li><strong>Music Options</strong>: <strong>MUSIC CONTROLS</strong>, <strong>AMBIENT MUSIC</strong> and <strong>&#x266B;</strong> icon.</li>
-            <li><strong>Map Options</strong>: <strong>SELECT ROOM</strong>, <strong>RESET MAP</strong>, <strong>SAVE MAP</strong>, <strong>LOAD MAP</strong> and <strong>PLAY MAP</strong>.</li>
-            <li><strong>Configurations</strong>: <strong>USER REPOSITORY</strong> and <strong>CONFIG</strong>.</li>
+            <li>
+              <strong>Objects</strong>: <strong>&#x229E;</strong> icon.
+            </li>
+            <li>
+              <strong>Music Options</strong>: <strong>CUSTOM MUSIC</strong>, <strong>AMBIENT MUSIC</strong> and <strong>&#x266B;</strong> icons.
+            </li>
+            <li>
+              <strong>Map Options</strong>: <strong>SELECT ROOM</strong>, <strong>RESET MAP</strong>, <strong>SAVE MAP</strong>, <strong>LOAD MAP</strong> and <strong>PLAY MAP</strong>.
+            </li>
+            <li>
+              <strong>Configurations</strong>: <strong>USER REPOSITORY</strong> and <strong>EXTRA CONFIG</strong>.
+            </li>
           </ul>
         </p>
       </article>
@@ -90,41 +95,52 @@
         <h3 class="title">Description</h3>
         <p>
           In the <strong>Map Editor</strong>, the stage layouts are represented by objects.
-          Each object has its type number and coordinates.
+          The objects are represented by sprites positioned closely to how the stages look like in action.
         </p>
         <p>
-          The coordinates are represented by the X and Y positions.
+          Each object is placed in different X and Y coordinates.
           The X position can go from between 0 to 15 from left to right, whereas the Y position can go from from 0 to 65535 from top to bottom.
+        </p>
+        <p>
+          You can see the Y position numbers on each side of the stage map.
+          The Y position numbers are only visible when at least one object is present on that Y position.
         </p>
         <p>
           When selecting an empty space, you will be granted with a list of object types.
           You can also select a placed object to change its type or remove it.
         </p>
-        <p>
-          Some object placements are determined by gray sprites next to the visual object sprite to illustrate the accurate in-game object postions.
-        </p>
       </article>
       <article>
-        <h3 class="title">Object types list</h3>
+        <h3 class="title"><img src="../../img/new-ezgif.com-resize.gif" class="new">Sprite / ID box toggle<img src="../../img/new-ezgif.com-resize.gif" class="new"></h3>
         <img class="center" src="img/maps1.png">
         <p>
+          You can check the ID box of each object by pressing the <strong>&#x229E;</strong> icon.
+          The sprites will turn into small colored rectangles with their type ID on them.
+          You can press the <strong>&#x229E;</strong> icon again to display the sprites back.
+        </p>
+        <p>
+          This option allows you to easily identify the precise object locations in case you want to remove or change the objects.
+        </p>
+        <p>
+          Here is the list of ID and color of each object:
+        </p>
+        <p>
           <ul>
-            <li><strong>Type 0</strong>: Basic platform</li>
-            <li><strong>Type 1</strong>: Fragile platform</li>
-            <li><strong>Type 2</strong>: Spike platform</li>
-            <li><strong>Type 3</strong>: Ring</li>
-            <li><strong>Type 4</strong>: Spring platform</li>
-            <li><strong>Type 5</strong>: Green hoop</li>
-            <li><strong>Type 6</strong>: Blue hoop</li>
-            <li><strong>Type 7</strong>: Enemy</li>
-            <li><strong>Type 8</strong>: Goal post (check its section for more information)</li>
-            <li><strong>Type 9</strong>: Basic platform (moving)</li>
-            <li><strong>Type 10</strong>: Twinkling stars</li>
-            <li><strong>Type 11</strong>: Spring platform (moving)</li>
-            <li><strong>Type 12</strong>: Spike platform (moving)</li>
-            <li><strong>Type 13</strong>: Fragile platform (moving)</li>
-            <li><strong>Type 14</strong>: Checkpoint (check its section for more information)</li>
-            <li><strong>Type 15</strong>: Undefined</li>
+            <li><strong style="color: magenta;">ID 0</strong>: Platform</li>
+            <li><strong style="color: magenta;">ID 1</strong>: Platform (Crumbly)</li>
+            <li><strong style="color: magenta;">ID 2</strong>: Platform (Spikey)</li>
+            <li><strong style="color: yellow;">ID 3</strong>: Ring</li>
+            <li><strong style="color: lightcoral;">ID 4</strong>: Platform (Spring)</li>
+            <li><strong style="color: limegreen;">ID 5</strong>: Green Hoop</li>
+            <li><strong style="color: deepskyblue;">ID 6</strong>: Blue Hoop</li>
+            <li><strong style="color: gray;">ID 7</strong>: Enemy</li>
+            <li><strong style="color: white;">ID 8</strong>: Goal Post / Boss transition</li>
+            <li><strong style="color: magenta;">ID 9</strong>: Moving Platform</li>
+            <li><strong style="color: yellow;">ID 10</strong>: Sparkle</li>
+            <li><strong style="color: lightcoral;">ID 11</strong>: Moving Platform (Spring)</li>
+            <li><strong style="color: magenta;">ID 12</strong>: Moving Platform (Spikey)</li>
+            <li><strong style="color: magenta;">ID 13</strong>: Moving Platform (Crumbly)</li>
+            <li><strong style="color: cyan;">ID 14</strong>: Checkpoint</li>
           </ul>
         </p>
       </article>
@@ -132,11 +148,11 @@
         <h3 class="title">Starting point</h3>
         <img class="center" src="img/maps2.png">
         <p>
-          <strong>The starting point of the stage is determined by the lowest basic platform placed (Type 0).</strong>
+          <strong>The starting point of the stage is determined by the lowest basic platform placed (ID 0).</strong>
           Any other objects placed below won't be present in the stage.
         </p>
         <p>
-          If you place multiple basic platforms at the lowest, the starting point will be the platform placed to the right.
+          If you place multiple basic platforms at the lowest, the starting point will be set to the platform placed to the rightmost.
           There is no other way to change the starting point position.
         </p>
       </article>
@@ -147,7 +163,7 @@
           Checkpoints must be placed in a specific way to work correctly. Here are the instructions on how to use them:
           <ul>
             <li>
-              <strong>Checkpoints must be placed on a basic platform (Type 0) at a Y position of 1 heigher than the basic platform.</strong>
+              <strong>Checkpoints must be placed on a basic platform (ID 0) at a Y position of 1 heigher than the basic platform.</strong>
               You can placed a platform either at the same X position or 2 to the right, but 1 to the right is recommended.
             </li>
             <li>
@@ -158,35 +174,35 @@
         </p>
       </article>
       <article>
-        <h3 class="title">Goal post</h3>
+        <h3 class="title">Goal Post / Boss transition</h3>
         <p>
-          The goal post is a necessary object type to clear a stage. It serves multiple purpose depending on the stage.
+          The ID 8 object type is necessary to clear a stage.
+          It serves multiple purpose depending on the stage.
         </p>
         <p>
-          In ACT 1 and 2 stages, the goal post represents the end of the stage. Reach the height of the goal post to clear the stage.
+          In ACT 1 and 2 stages, the ID 8 object type is the Goal Post and it represents the end of the stage.
+          Reach the height of the Goal Post to clear the stage.
         </p>
         <img class="center" src="img/maps4.png">
         <p>
-          In ACT 3 stages, the goal post makes you ascend until a certain height.
-          <strong>The goal post is necessary to make Dr. Eggman appear.</strong>
+          In ACT 3 stages, the ID 8 object type is the Boss transition.
+          When reaching the height of the Boss transition, the playable character is ascending until a certain height.
+        </p>
+        <p>
+          <strong>The Boss transition is necessary to make Dr. Eggman appear.</strong>
           Dr. Eggman is located at the highest position of the stage. He must be defeated to clear the stage.
         </p>
         <p>
-          You can add multiple goal posts to make you ascend even more, but doing so will make Dr. Eggman behave faster each time.
+          You can add multiple Boss transitions to make you ascend even more, but doing so will make Dr. Eggman behave faster each time.
         </p>
       </article>
       <br id="music"><h2>Music Options</h2>
       <article>
-        <h3 class="title">Music controls</h3>
-        <br><img class="center" src="img/maps5.png">
+        <h3 class="title">CUSTOM MUSIC</h3>
+        <img class="center" src="img/maps5.png">
         <p>
-          The <strong>MUSIC CONTROLS</strong> menu is where you can select a custom music for your stages.
-        </p>
-        <p>
-          If you select <strong>Select Music</strong>, you will be granted with a library of soundtracks from various Sonic games.
-        </p>
-        <p>
-          If you want to replay a music track, you can do so by selecting <strong>Restart Music</strong>.
+          The <strong>CUSTOM MUSIC</strong> menu is where you can select a custom music for your stages or listen to the different music tracks.
+          When entering it, you will be granted with a library of soundtracks from various Sonic games.
         </p>
       </article>
       <article>
@@ -200,7 +216,7 @@
           Though this may take a few seconds, as the music tracks are stored in the Internet Archive.
         </p>
         <p>
-          Finally, to use the selected music to be played in your stage, you need to check the Custom Music option in the <strong>CONFIG</strong> menu.
+          Finally, to use the selected music to be played in your stage, you need to check the Custom Music option in the <strong>EXTRA CONFIG</strong> menu.
         </p>
       </article>
       <article>
@@ -208,21 +224,22 @@
         <p>
           The <strong>AMBIENT MUSIC</strong> option allows you to listen to music to give an ambient while using the Map Editor.
         </p>
+        <img class="center" src="img/maps6.png">
         <p>
-          You can also pause and resume the music by pressing the <strong>&#x266B;</strong> icon.
+          You can also pause and resume the music by pressing the <strong>&#x266B; PLAY/PAUSE</strong> icon and restart the music by pressing the <strong>&#x266B; RESTART</strong> icon.
         </p>
       </article>
       <br id="maps"><h2>Map Options</h2>
       <article>
         <h3 class="title">SELECT ROOM</h3>
-        <img class="center" src="img/maps6.png">
+        <img class="center" src="img/maps7.png">
         <p>
           The stages in the editor are named rooms.
           There are 21 rooms in total in the game to check and modify.
         </p>
         <p>
           <strong><span style="color: orange;">DISCLAIMER:</span> Changing rooms makes you lose your stage layout modifications.
-            Make sure to save and load your map before changing rooms to keep your modifications.</strong>
+            Make sure to save and load your map before changing rooms to preserve your modifications.</strong>
         </p>
         <p>
           You can see the room number on the menu bar, but the rooms are also recognizable by the sprites on the canvas.
@@ -241,9 +258,13 @@
         </p>
       </article>
       <article>
-        <h3 class="title">RESET MAP</h3>
+        <h3 class="title">CLEAR MAP</h3>
+        <img class="center" src="img/maps8.png">
         <p>
-          The <strong>RESET MAP</strong> option allows you to clear the stage layout.<br>
+          The <strong>CLEAR MAP</strong> option allows you to clear the stage layout.<br>
+          <strong>If you clear a map, all unsaved stage layout modifications will be lost.</strong>
+        </p>
+        <p>
           You can bring the original stage layout back by selecting the same stage room in the <strong>SELECT ROOM</strong> menu.
         </p>
       </article>
@@ -252,7 +273,7 @@
         <p>
           When pressing <strong>SAVE MAP</strong> for the first time, you have to select a folder to determine the <strong>SonicJump subfolder</strong> directory, where your modified map files will be saved.
         </p>
-        <img class="center" src="img/maps7.png">
+        <img class="center" src="img/maps9.png">
         <p>
           After selecting a folder directory, pressing <strong>SAVE MAP</strong> will ask you save your map as a .bin (map.bin) or .txt file (decoded_map.txt).
         </p>
@@ -267,12 +288,12 @@
         </p>
         <p>
           To load your progress, press the <strong>LOAD MAP</strong> option and search for a <strong>map.bin</strong> or <strong>decoded_map.txt</strong> file located in the <strong>SonicJump subfolder</strong>.
-          This folder is most probably located in the <strong>&#x2913; DOWNLOAD</strong> folder of your internal device.
+          This folder is most likely located in the <strong>&#x2913; DOWNLOAD</strong> folder of your internal device.
         </p>
       </article>
       <article>
         <h3 class="title">PLAY MAP</h3>
-        <img class="center" src="img/maps8.png">
+        <img class="center" src="img/maps10.png">
         <p>
           After loading or saving your map, you can play and test it by pressing <strong>PLAY MAP</strong>.
           This option will bring you to the Stage Select menu.
@@ -285,7 +306,7 @@
       <br id="config"><h2>Configurations</h2>
       <article>
         <h3 class="title">USER REPOSITORY</h3>
-        <img class="center" src="img/maps9.png">
+        <img class="center" src="img/maps11.png">
         <p>
           The <strong>USER REPOSITORY</strong> option is used to read the <strong>config.ini</strong> file from the user repository, which contains the name of the user textures and graphics for the maps.
         </p>
@@ -294,13 +315,16 @@
         </p>
       </article>
       <article>
-        <h3 class="title">CONFIG MENU</h3>
-        <img class="center" src="img/maps10.png">
+        <h3 class="title">EXTRA CONFIG</h3>
+        <img class="center" src="img/maps12.png">
         <p>
-          The <strong>CONFIG</strong> menu is where you can configure additional stage settings.
+          The <strong>EXTRA CONFIG</strong> menu is where you can configure additional stage settings.
         </p>
         <p>
-          <strong><span style="color: orange;">DISCLAIMER:</span> The CONFIG menu doesn't track all configured settings after saving. Meaning that to make an additional modification, you have to configure all the settings again.</strong>
+          <strong>
+            <span style="color: orange;">DISCLAIMER:</span> The EXTRA CONFIG menu doesn't track all configured settings after saving.
+            Meaning that to make an additional modification, you have to configure all the settings again.
+          </strong>
         </p>
         <p>
           Here are the different settings available:
@@ -308,12 +332,13 @@
             <li><strong>Life Count</strong>: Set the life counter to start the stage with a specific number of remaining lives (2 by default).</li>
             <li><strong>Stage Name</strong>: Change the name of the stage (zone name by default).</li>
             <li><strong>Act Number</strong>: Change the act number of the stage (1, 2 or 3 by default).</li>
+            <li><strong>Tutorial Text</strong>: Make the tutorial board appear during the stage with your custom text.</li>
             <li><strong>BLOCKPICS</strong>: Change the sprites of the platforms and enemy.</li>
             <li><strong>EDGEPICS</strong>: Change the side background of the stage.</li>
             <li><strong>EXTRASPIC</strong>: Change the sprites of the ring, spring platform and Dr. Eggman.</li>
             <li><strong>STRIPPICS</strong>: Change the background environment of the stage.</li>
             <li><strong>TILESPICS</strong>: Change the background tiles of the stage.</li>
-            <li><strong>Custom Music</strong>: When checked, the stage will play the selected music from the <strong>MUSIC CONTROLS</strong> menu.</li>
+            <li><strong>Custom Music</strong>: When checked, the stage will play the selected music from the <strong>CUSTOM MUSIC</strong> menu.</li>
           </ul>
         </p>
       </article>
