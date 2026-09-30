@@ -179,23 +179,20 @@
         <h3 class="title"><img src="../../img/new.gif" class="new">GPU rendering<img src="../../img/new.gif" class="new"></h3>
         <p>
           <strong>Gdpro</strong> has recently implemented GPU rendering to prevent the CPU from being overwhelmed by rendering the graphics.
-          This feature is intended to get rid of the slowdowns.
-          However, I put the latest build into the test!
+          He used the OpenGL ES 2.0 graphic API to get rid of the slowdowns.
+          OpenGL ES is a great choice, as it is compatible with many, if not all Android devices.
         </p>
         <p>
-          I was testing his builds using BlueStacks at the highest screen resolution (5120x2160) with 4GB of allocated RAM and low performance.
-          The previous builds without featuring GPU rendering are considerably slow.
-          The game runs at around 20fps when animating the SEGA and SONIC TEAM logos.
-          However, in the build with the GPU rendering, the game runs at around 40fps during those logos, meaning that the game runs faster!
+          After testing his latest build, the result is impressive!
+          Even when playing at the highest screen resolution on BlueStacks, the game runs perfectly at 60fps!
         </p>
         <p>
           While this sounds like great news, there are things to take into consideration.
-          I was testing the builds on a very powerful PC.
-          Which means that on certain Android devices, the game might still run very slow.
+          Because the source code has some compatibility issues with the graphics API, some parts of the game plays and looks off.
         </p>
+        <img class="center" src="img/project4.png">
         <p>
-          I believe that either the GPU rendering needs some improvements, or there are more modifications to be made for the slowdows to begone for good.
-          The goal is to make the game running at 60fps at the higest screen resolution possible and at the lowest performance possible.
+          The issues include the certain character movements being too fast, some enemies having wrong behaviors, and gaps between sprites and tiles.
         </p>
       </article>
       <article>
