@@ -35,10 +35,8 @@
     <nav id="myLeftNav" class="anchor">
       <a href="../main/projects.html" class="button">&#8617; BACK</a>
       <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
-      <a href="#60fps" onclick="closeNav()" class="button">How to make the game run at 60fps?</a>
-      <a href="#goingon" onclick="closeNav()" class="button">What is going on?</a>
-      <a href="#solution" onclick="closeNav()" class="button">The solution in theory</a>
-      <a href="#update" onclick="closeNav()" class="button">Update<img src="../../img/new.gif" class="new"></a>
+      <a href="#works" onclick="closeNav()" class="button">How the game works</a>
+      <a href="#gdpro" onclick="closeNav()" class="button">Gdpro's involvement</a>
     </nav>
     <section onclick="closeNav()" class="color3">
       <h1>Project 60fps</h1>
@@ -57,8 +55,9 @@
         </p>
         <img class="center furrican" src="../../img/furrican1.png">
       </article>
-      <br id="60fps"><h2>How to make the game run at 60fps?</h2>
+      <br id="works"><h2>How the game works</h2>
       <article>
+        <h3 class="title">How to make the game run at 60fps?</h3>
         <p>Well... the answer is actually simple!</p>
         <p>
           In source code, all you have to do is put the FRAME_SKIP value to 0 in the <strong>getFrameTime()</strong> method of the <strong>MainState</strong> file located in the <strong>MFLib</strong> folder.
@@ -67,8 +66,8 @@
         <p>Once this value is changed, recompile the APK, and voila! Problem solved, right?</p>
         <p><strong>WRONG! As it turns out, doing so makes the game runs too fast! It runs 4 times faster than it supposed to be.</strong></p>
       </article>
-      <br id="goingon"><h2>What is going on?</h2>
       <article>
+        <h3 class="title">What is going on?</h3>
         <p>Before talking about the solution, I would like to explain what is going on in the game.</p>
         <p>
           First of all, we all know that the Android port of Sonic Advance has a problematic frame rate.
@@ -91,27 +90,51 @@
         <img class="center" src="img/options2.gif">
         <p>However, if I make the game run at 60fps, here is how the options banner behaves:</p>
         <img class="center" src="img/options3.gif">
-        <p>As you can see now is that the options banner now moves at its intended speed, but in a smoother frame rate!<br>
-          The options banner still moves 1 pixel to the left per frame, but because now the game runs at 60fps, it looks like I made the options banner moves smoother!</p>
-      </article>
-      <br id="solution"><h2>The solution in theory</h2>
-      <article>
+        <p>
+          As you can see now is that the options banner now moves at its intended speed, but in a smoother frame rate!<br>
+          The options banner still moves 1 pixel to the left per frame, but because now the game runs at 60fps, it looks like I made the options banner moves smoother!
+        </p>
         <p>
           Alright. We have an example of how to fix an animation when giving the game a different frame rate.
           Now, the question that is actually the right one to ask is this: <strong>How to make the game run at 60fps and at the right speed?</strong>
         </p>
         <p>
-          Well, here's my theory: Since the game is intentionally running at 15fps, <strong>we have to change all the values regarding speed, physics, gravity, time and animation frames by dividing or multiplying all those values by 4.</strong>
+          Well, since the game is intentionally running at 15fps, <strong>we have to change all the values regarding speed, physics, gravity, time and animation frames by dividing or multiplying all those values by 4.</strong>
           In this way, the game will run 4 times slower at 15fps, but it will run at normal speed at 60fps!
         </p>
+      </article>
+      <article>
+        <h3 class="title">Slowdows during higher frame rates</h3>
         <p>
-          You might think that this is a good news, but the problem is that this is more complicated.
-          You see, Sonic Advance is a quite an ambitious game in terms of programming.
-          <strong>Tracking down every values regarding speed, physics, gravity, time and animation frames will take a lot of time, patience and understandings of the source code.</strong>
-          Not to mention a few glitches to take into consideration, such as the opening animation not working properly at one point.
+          However, a new problem has been discovered after reprogramming old Android games to run smoothly while keeping the intended speed.
+          <strong>After experimenting with higher frame rate gameplay, we discoved that slowdowns occur when playing at higher frame rates</strong>.
+          Even some of the most performant mobile devices cannot mitigate slowdowns easily.
+        </p>
+        <p>
+          As it turns out, one key factor of the slowdown to occur are the graphics.
+          You see, <strong>older mobile games lack modern hardware optimizations and are not compiled with modern multi-threaded rendering in mind</strong>.
+          The CPU gets overwhelmed trying to draw millions of pixels on screen frame by frame based on your screen resolution, even though the game canvas only needs a small pixel resolution.
+        </p>
+        <p>
+          Because of this, rendering so many frames so many times than the intended frame rate may cause the device to run at its maximum capacity.
+          This also may cause the device to quickly heat up, trigerring thermal throttling and quick battery draining.
+        </p>
+        <p>
+          The underlying physics and gameplay loop require 60 internal computing cycles per second to advance time normally.
+          But because of the software rendering issue, the CPU can still only calculate approximately 15 updates per second.
+        </p>
+        <p>
+          If you force the display output to a smooth 60fps but limit the execution speed, the game engine spaces out those 15 frames over a full 60-frame timeline.
+          The game looks incredibly smooth because there is no stuttering, but everything moves in slow motion.
+          The time literally slows down by a huge percentage because the game takes nearly 4 seconds of real time to calculate one second of in-game time.
+        </p>
+        <p>
+          Thankfully, <strong>this problem can be mitigated by implemented a graphics API like OpenGL ES or Android Vulkan</strong>.
+          In this way, the GPU takes care of drawing the graphics while the CPU only takes care of the rest of the game functions.
+          <strong>OpenGL ES is the most recommended API, since it is compatible with many, if not all Android devices</strong>.
         </p>
       </article>
-      <br id="update"><h2><img src="../../img/new-ezgif.com-resize.gif" class="new">Update<img src="../../img/new-ezgif.com-resize.gif" class="new"></h2>
+      <br id="gdpro"><h2>Gdpro's involvement</h2>
       <article>
         <h3 class="title">Gdpro's mod</h3>
         <p>
@@ -130,58 +153,10 @@
         </div>
       </article>
       <article>
-        <h3 class="title">Leftovers</h3>
-        <p>
-          While this sounds like great news, the 60fps project is far from being finished for multiple reasons.
-        </p>
-        <img class="center" src="img/project3.gif">
-        <p>
-          First of all, some animations like the ones in the Character Select menu are embedded in .json files instead of the source code.
-          Because of this, it is very difficult to adjust the speed of those animations.
-          A possible  solution would be to convert the .json embedded animation frames into the source code to make the modifications easier.
-        </p>
-        <p>
-          Secondly, <strong>Gdpro</strong> hasn't done fixing everything for the mod to be perfect.
-          There are a lot of leftovers such as glitches and oversights that might be too difficult to overcome.
-        </p>
-      </article>
-      <article>
-        <h3 class="title">Slowdowns</h3>
-        <p>
-          But the biggest issue that frame rate increase brings up are the slowdowns.
-          After experimenting with higher frame rate gameplay, the issue of slowdowns has been discovered when testing the game at 60fps.
-          Even some of the most performant mobile devices cannot mitigate slowdowns easily.
-        </p>
-        <p>
-          As it turns out, one key factor of the slowdown to occur are the graphics.
-          You see, older mobile games lack modern hardware optimizations and are not compiled with modern multi-threaded rendering in mind.
-          The CPU gets overwhelmed trying to draw millions of pixels on screen frame by frame based on your screen resolution, even though the game canvas only needs a small pixel resolution.
-        </p>
-        <p>
-          Because of this, rendering so many frames so many times than the intended frame rate may cause the device to run at its maximum capacity.
-          This also may cause the device to quickly heat up, trigerring thermal throttling and quick battery draining.
-        </p>
-        <p>
-          The underlying physics and gameplay loop require 60 internal computing cycles per second to advance time normally.
-          But because of the software rendering issue, the CPU can still only calculate approximately 15 updates per second.
-        </p>
-        <p>
-          If you force the display output to a smooth 60fps but limit the execution speed, the game engine spaces out those 15 frames over a full 60-frame timeline.
-          The game looks incredibly smooth because there is no stuttering, but everything moves in slow motion.
-          The time literally slows down by a huge percentage because the game takes nearly 4 seconds of real time to calculate one second of in-game time.
-        </p>
-        <p>
-          There are a few theories on how to get rid of the slowdowns.
-          Since we know that the slowdowns occur primarily due to the game being drawn on screen frame by frame, we have to make the graphics so it doesn't cost too much performance.
-          Either the screen resolution of the device has to be modified when opening the game application, or the game has to be optimized by implementing a graphics API.
-        </p>
-      </article>
-      <article>
         <h3 class="title"><img src="../../img/new-ezgif.com-resize.gif" class="new">GPU rendering<img src="../../img/new-ezgif.com-resize.gif" class="new"></h3>
         <p>
           <strong>Gdpro</strong> has recently implemented GPU rendering to prevent the CPU from being overwhelmed by rendering the graphics.
           He used the OpenGL ES 2.0 graphics API to get rid of the slowdowns.
-          OpenGL ES is a great choice, as it is compatible with many, if not all Android devices.
         </p>
         <p>
           Additionally, <strong>Gdpro</strong> also added delta time for the frame rate, making the game run smoother.
@@ -196,7 +171,7 @@
         </p>
         <img class="center" src="img/project4.png">
         <p>
-          The issues include the certain character movements being too fast, some enemies having wrong behaviors, and gaps between sprites and tiles.
+          The issues include the certain character movements being too fast, having a gravity higher than usual, some enemies having wrong behaviors, and gaps between sprites and tiles.
         </p>
       </article>
       <article>
