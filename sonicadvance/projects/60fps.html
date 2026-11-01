@@ -155,7 +155,8 @@
         <p>
           On September 2026, <strong>Gdpro</strong> has implemented GPU rendering to prevent the CPU from being overwhelmed by rendering the graphics.
           He used the OpenGL ES 2.0 graphics API to get rid of the slowdowns.
-          Additionally, <strong>Gdpro</strong> also added delta time for the frame rate, making the game run smoother.
+          Additionally, <strong>Gdpro</strong> also added delta time for the logic.
+          The delta time is used to make motion frame rate independent without making animations moving even faster when bypassing the initial frame rate.
         </p>
         <p>
           To test the frame rate improvement, I was running the game using BlueStacks at the highest screen resolution available.
