@@ -35,8 +35,8 @@
     <nav id="myLeftNav" class="anchor">
       <a href="../main/projects.html" class="button">&#8617; BACK</a>
       <a href="#intro" onclick="closeNav()" class="button">Introduction</a>
-      <a href="#works" onclick="closeNav()" class="button">How the game works</a>
-      <a href="#gdpro" onclick="closeNav()" class="button">Gdpro's involvement</a>
+      <a href="#context" onclick="closeNav()" class="button">Context</a>
+      <a href="#leftovers" onclick="closeNav()" class="button">Remaining leftovers</a>
     </nav>
     <section onclick="closeNav()" class="color3">
       <h1>Project 60fps</h1>
@@ -46,16 +46,21 @@
           Hello and welcome to the Project 60fps page!
         </p>
         <p>
-          The goal of this project is to make the Android port of Sonic Advance run at 60fps.
+          The frame rate is by far the biggest problem that players were complaining about.
+          The Android port of Sonic Advance is meant to run at 15fps.
+          Therefore, I made this project with the goal of making this game run at 60fps.
           However, while this sounds simple, this task is actually too demanding to make it possible.
-          Therefore, I made this page to explain how to make the game run smoothly and why it is complicated.
+        </p>
+        <p>
+          In this project page, you can find a <strong>Context</strong> section to better understand how the game works and the current progress of this project.
+          Next, the <strong>Remaining leftovers</strong> section is where you can take a look at the remaining flaws to fix and understand how to give some help to this project.
         </p>
         <p>
           Also, if you have enough experience with Java programming and would like to give some help for this project, you can contact me via the <a href="../support/contact.html"><strong>Contact</strong></a> page.
         </p>
         <img class="center furrican" src="../../img/furrican1.png">
       </article>
-      <br id="works"><h2>How the game works</h2>
+      <br id="context"><h2>Context</h2>
       <article>
         <h3 class="title">How to make the game run at 60fps?</h3>
         <p>Well... the answer is actually simple!</p>
@@ -134,7 +139,6 @@
           <strong>OpenGL ES is the most recommended API, since it is compatible with many, if not all Android devices</strong>.
         </p>
       </article>
-      <br id="gdpro"><h2>Gdpro's involvement</h2>
       <article>
         <h3 class="title">Gdpro's mod</h3>
         <p>
@@ -143,8 +147,29 @@
           After installing the application from this .swb file, I realized that the game runs at 60fps while maintaining its normal speed (for the most part).
         </p>
         <p>
-          I was so amazed about this result, but I pointed out some flaws that needed to be fixed, so I asked <strong>Gdpro</strong> to fix some issues.
-          And after a few updates, he uploaded his mod in GameBanana (link down-below).
+          I was so amazed by this revelation!
+          Of course, his result wasn't perfect, so I told him about the many flaws and leftovers that I encountered.
+          Once of which was that the game ran slower when playing on higher screen resolution.
+          Therefore, a graphics API was necessary to maintain a smoother frame rate.
+        </p>
+        <p>
+          On September 2026, <strong>Gdpro</strong> has implemented GPU rendering to prevent the CPU from being overwhelmed by rendering the graphics.
+          He used the OpenGL ES 2.0 graphics API to get rid of the slowdowns.
+          Additionally, <strong>Gdpro</strong> also added delta time for the frame rate, making the game run smoother.
+        </p>
+        <p>
+          To test the frame rate improvement, I was running the game using BlueStacks at the highest screen resolution available.
+          At first, the game ran at around 40fps.
+          But after some tweaking, <strong>Gdpro</strong> managed to make it run at 60fps!
+        </p>
+        <img class="center" src="img/project3.png">
+        <p class="italic">Tile gaps on the right side of the screen</p>
+        <p>
+          Additionally, an oversight known as tile gaps were present using the graphics API.
+          On October 2026, <strong>Gdpro</strong> has recently fixed this oversight as well!
+        </p>
+        <p>
+          You can find his latest build and source code of his work via the link down-below.
         </p>
         <div class="external">
           <h3>External Links</h3>
@@ -152,39 +177,162 @@
           <a href="https://github.com/Gdpro835/Sa1JavaRewrite/tree/arena/01a0bf77-sa1javarewrite" target="_blank">Sa1JavaRewrite - GitHub</a>
         </div>
       </article>
+      <br id="leftovers"><h2>Remaining leftovers</h2>
       <article>
-        <h3 class="title"><img src="../../img/new-ezgif.com-resize.gif" class="new">GPU rendering<img src="../../img/new-ezgif.com-resize.gif" class="new"></h3>
+        <h3 class="title">Introduction</h3>
         <p>
-          <strong>Gdpro</strong> has recently implemented GPU rendering to prevent the CPU from being overwhelmed by rendering the graphics.
-          He used the OpenGL ES 2.0 graphics API to get rid of the slowdowns.
+          This section is where you can find the remaining leftovers (glitches, oversights and other flaws) caused during the transition to the 60fps recompilation and the graphics API implementation.
+          This section may change over time based on <strong>Gdpro</strong>'s progression.
         </p>
         <p>
-          Additionally, <strong>Gdpro</strong> also added delta time for the frame rate, making the game run smoother.
-        </p>
-        <p>
-          After testing his latest build, the result is impressive!
-          Even when playing at the highest screen resolution on BlueStacks, the game runs perfectly at 60fps!
-        </p>
-        <p>
-          While this sounds like great news, there are things to take into consideration.
-          Because the source code has some compatibility issues with the graphics API, some parts of the game plays and looks off.
-        </p>
-        <img class="center" src="img/project4.png">
-        <p>
-          The issues include the certain character movements being too fast, having a gravity higher than usual, some enemies having wrong behaviors, and gaps between sprites and tiles.
+          Once all the leftovers are done, the final result will achieve the ultimate goal of this project and make it a definitive major update of Sonic Advance Mobirev!
         </p>
       </article>
       <article>
-        <h3 class="title">Conclusion</h3>
+        <h3 class="title">First opening sequence</h3>
+        <img class="center" src="img/project4.gif">
         <p>
-          The Project 60fps of the Sonic Advance's Android port is far from being finished, but it is possible.
-          However, it is still a very complicated project to make it completed.
-          The discovery of the slowdowns when playing on higher frame rates than intended was interesting to better understand how old mobile games were designed.
+          <strong>DESCRIPTION:</strong><br>
+          Let's start the game first with the opening.
+          As you can see, the green background has some cuts at the bottom of the screen.
+          The reason may has to do with the .json file not adding repeating sets of background tiles in time for such at a smoother animation.
         </p>
         <p>
-          With all that said, <strong>I need help from experimented Java programmers to complete this project.</strong>
-          The frame rate is by far the most complained issue about the Android port of Sonic Advance.
-          If we can solve this issue, we can finally have the best and definitive version of Sonic Advance on Android!
+          <strong>PRIORITY: Medium</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The solution could be to change the <strong>opening.json</strong> file in order to add more background tiles below the ones that appears from the bootom of the screen.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Magnetic barrier</h3>
+        <img class="center" src="img/project5.gif">
+        <p>
+          <strong>DESCRIPTION:</strong><br>
+          The magnetic barrier has an oversight.
+          While moving very fast, the rings don't reach the character equipping it.
+          Instead, they follow the character until you slow down.
+        </p>
+        <p>
+          <strong>PRIORITY: Medium</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          It seems like the rings target trajectory hasn't been calculated correctly.
+          Looking at the gameplay, the target trajectory is located to the horizontal center of the screen, instead of the character position.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Slightly lower gravity</h3>
+        <p>
+          <strong>DESCRIPTION:</strong><br>
+          Due to the transition to 60fps, the character gravity doesn't match the one from the original 15fps.
+          While the normal jumping gravity has been fixed, other jump heights related to the springs, bars, ramps and trampolines are slightly higher than usual.
+        </p>
+        <p>
+          Here are comparisons between the original 15fps (left) and new 60fps (right) gameplay:
+        </p>
+        <div class="wrap">
+          <img src="img/project6.gif">
+          <img src="img/project7.gif">
+        </div>
+        <p class="italic">Horizontal bars</p>
+        <div class="wrap">
+          <img src="img/project8.gif">
+          <img src="img/project9.gif">
+        </div>
+        <p class="italic">Yellow springs</p>
+        <div class="wrap">
+          <img src="img/project10.gif">
+          <img src="img/project11.gif">
+        </div>
+        <p class="italic">Trampolines (jumping 4 times)</p>
+        <p>
+          <strong>PRIORITY: High</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The character gravity is a bit too low, considering the lower gravity occuring on all launching inertias.
+          The solution is to adjust the character gravity in a way so it will match the one from the original 15fps.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Horizontal bars movement</h3>
+        <p>
+          <img class="center" src="img/project12.gif">
+          <strong>DESCRIPTION:</strong><br>
+          In <strong>Secret Base Zone Act 2</strong>, <strong>Angel Island Zone Act 2</strong> and <strong>Egg Rocket Zone</strong>, you can find horizontal bars to hang and move on.
+          However, due to the transition to 60fps, the character movement speed when hanging on those bars is way too fast. 
+        </p>
+        <p>
+          <strong>PRIORITY: Very high</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The simple solution is to reduce the character movement speed, presumably by 25%.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Oct unmovable shots</h3>
+        <p>
+          <img class="center" src="img/project13.gif">
+          <strong>DESCRIPTION:</strong><br>
+          In <strong>Egg Rocket Zone</strong> and <strong>Cosmic Angel Zone</strong>, you can find badniks named Octs.
+          They move left and right and occasionally shoot purple beams that descend.
+          However, due to the transition to 60fps, the beams don't descend.
+        </p>
+        <p>
+          <strong>PRIORITY: Very high</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The simple solution is to set the purple beam descend speed correctly.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Overduplicated animated objects</h3>
+        <p>
+          <strong>DESCRIPTION:</strong><br>
+          Because of the 60fps transition, duplicated objects that animates are 4 times more duplicated than usual.
+        </p>
+        <img class="center" src="img/project14.gif">
+        <p>
+          To give you an exalmple, here is the first Special Stage transition.
+          Notice that there are way more white vertical lines moving on screen.
+        </p>
+        <img class="center" src="img/project15.gif">
+        <p>
+          Compare this to the original 15fps.
+        </p>
+        <img class="center" src="img/project16.gif">
+        <p>
+          Another example is the gear parts scattering when reaching a section of the rocket during <strong>Egg Rocket Zone</strong>.
+        </p>
+        <p>
+          <strong>PRIORITY: Medium</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The simple solution is to set the animated object duplication every 4 frames instead of 1, since 60 devided by 15 equals 4.
+        </p>
+      </article>
+      <article>
+        <h3 class="title">Gameplay canvas gaps</h3>
+        <p>
+          <strong>DESCRIPTION:</strong><br>
+          When entering a menu or starting the game from the main menu, the gameplay canvas shows up and hide the title screen.
+          However, because of the new graphics API, this canvas may not take the entire screen width, resulting in tiny gaps at the edge of each side of the screen.
+        </p>
+        <p>
+          If you have seen previous gameplay footages above, you may notice the edges having gaps of the left and right side of the canvas.
+        </p>
+        <p>
+          <strong>PRIORITY: High</strong>
+        </p>
+        <p>
+          <strong>POSSIBLE SOLUTION:</strong><br>
+          The solution could be to set the graphics API so each edge takes care of those gaps.
         </p>
       </article>
     </section>
